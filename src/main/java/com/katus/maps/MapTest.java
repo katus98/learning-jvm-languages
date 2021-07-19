@@ -26,8 +26,9 @@ import java.util.Set;
  * @version 1.0, 2020-08-15
  */
 public class MapTest {
+
     @Test
-    public void test1() {
+    void test1() {
         Map map = new HashMap<>();
         // 添加新的元素
         map.put("AA", 12);
@@ -54,7 +55,7 @@ public class MapTest {
     }
 
     @Test
-    public void test2() {
+    void test2() {
         Map map = new HashMap<>();
         map.put("AA", 46);
         map.put("BB", 74);
@@ -76,7 +77,7 @@ public class MapTest {
     }
 
     @Test
-    public void test3() {
+    void test3() {
         Map map = new HashMap<>();
         map.put("AA", 74);
         map.put("BB", 84);
@@ -97,5 +98,23 @@ public class MapTest {
             Map.Entry entry = (Map.Entry) obj;
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
+    }
+
+    /**
+     * put()方法流程
+     * 判断哈希表是否为空表 -> 扩容
+     * 根据key计算下标
+     * 如果table[index]==null -> 添加到首位
+     * 如果key==table[index].key -> 替换首节点的旧值
+     * 如果table[index]是个树节点 -> 添加到红黑树
+     * 遍历table[index]链表, 如果存在key -> 替换旧值; 如果不存在 -> 插入到链表尾部
+     * 如果链表长度>=8且哈希表长度>=64 -> 链表转换为红黑树; 否则 -> 扩容链表
+     * 如果元素数量>=阈值 -> 扩容链表
+     */
+    @Test
+    void testPut() {
+        HashMap<Integer, String> hashMap = new HashMap<>();
+        hashMap.put(0, "katus");
+        hashMap.forEach((key, value) -> System.out.println(key));
     }
 }
