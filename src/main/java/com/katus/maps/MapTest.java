@@ -2,10 +2,8 @@ package com.katus.maps;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Map 双列数据 k-v 对数据
@@ -110,11 +108,35 @@ public class MapTest {
      * 遍历table[index]链表, 如果存在key -> 替换旧值; 如果不存在 -> 插入到链表尾部
      * 如果链表长度>=8且哈希表长度>=64 -> 链表转换为红黑树; 否则 -> 扩容链表
      * 如果元素数量>=阈值 -> 扩容链表
+     *
+     * 本身hashmap是线程不安全的, 可能会导致死循环, 并发环境不能使用
      */
     @Test
     void testPut() {
         HashMap<Integer, String> hashMap = new HashMap<>();
         hashMap.put(0, "katus");
         hashMap.forEach((key, value) -> System.out.println(key));
+    }
+
+    /**
+     * ConcurrentHashMap线程安全
+     * 本身是二次哈希, 分段持有对象
+     */
+    @Test
+    void testConcurrentHashMap() {
+        ConcurrentHashMap<Integer, String> concurrentHashMap = new ConcurrentHashMap<>();
+        concurrentHashMap.put(1, "16");
+        concurrentHashMap.forEach((key, value) -> System.out.println(key));
+    }
+
+    /**
+     * Hashtable线程安全
+     * 全部通过同步方法实现线程安全, 效率很低
+     */
+    @Test
+    void testHashtable() {
+        Hashtable<Integer, String> hashtable = new Hashtable<>();
+        hashtable.put(1, "15");
+        hashtable.forEach((key, value) -> System.out.println(key));
     }
 }
