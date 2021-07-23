@@ -16,15 +16,15 @@ public class Array<E> {
     }
 
     public Array(int capacity) {
-        this.size = capacity;
+        this.size = 0;
         data = (E[]) new Object[capacity];
     }
 
-    public int getSize() {
+    public int size() {
         return size;
     }
 
-    public int getCapacity() {
+    public int capacity() {
         return data.length;
     }
 
@@ -33,8 +33,8 @@ public class Array<E> {
     }
 
     public void add(int index, E e) {
-        if (size == getCapacity()) {
-            resize(2 * getCapacity());
+        if (size == capacity()) {
+            resize(2 * capacity());
         }
         checkIndex(index);
         System.arraycopy(data, index, data, index + 1, size - index);
@@ -53,6 +53,14 @@ public class Array<E> {
     public E get(int index) {
         checkIndex(index);
         return data[index];
+    }
+
+    public E getFirst() {
+        return get(0);
+    }
+
+    public E getLast() {
+        return get(size - 1);
     }
 
     public void set(int index, E e) {
@@ -79,8 +87,8 @@ public class Array<E> {
         System.arraycopy(data, index + 1, data, index, size - index - 1);
         size--;
         // lazy 处理
-        if (size == getCapacity() / 4 && getCapacity() / 2 != 0) {
-            resize(getCapacity() / 2);
+        if (size == capacity() / 4 && capacity() / 2 != 0) {
+            resize(capacity() / 2);
         }
         return ele;
     }
