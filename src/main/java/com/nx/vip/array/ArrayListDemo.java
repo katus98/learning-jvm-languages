@@ -36,4 +36,27 @@ public class ArrayListDemo {
         new ThreadIterator(synchronizedList).start();
         new ThreadAdd(synchronizedList).start();
     }
+
+    @Test
+    void test() {
+        System.out.println(cal(1));
+        System.out.println(cal(49));
+        System.out.println(cal(120));
+        System.out.println(cal(279));
+    }
+
+    /**
+     * 获得不低于cap的最小2的整幂次
+     * @param cap 输入容量
+     * @return 返回容量
+     */
+    int cal(int cap) {
+        int n = cap - 1;
+        n |= n >>> 1;
+        n |= n >>> 2;
+        n |= n >>> 4;
+        n |= n >>> 8;
+        n |= n >>> 16;
+        return (n < 0) ? 1 : (n >= 1 << 30) ? 1 << 30 : n + 1;
+    }
 }
