@@ -1,9 +1,5 @@
 package com.katus.generic;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * @author SUN Katus
  * @version 1.0, 2020-08-17
