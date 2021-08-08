@@ -17,6 +17,7 @@
         <scala.version>2.12.14</scala.version>
         <spark.version>2.4.6</spark.version>
         <lombok.version>1.18.20</lombok.version>
+        <auto-service.version>1.0</auto-service.version>
     </properties>
 
     <dependencies>
@@ -43,6 +44,12 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <optional>true</optional>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.auto.service/auto-service -->
+        <dependency>
+            <groupId>com.google.auto.service</groupId>
+            <artifactId>auto-service</artifactId>
+            <version>${auto-service.version}</version>
         </dependency>
     </dependencies>
 
