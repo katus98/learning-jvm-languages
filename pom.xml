@@ -18,6 +18,7 @@
         <spark.version>2.4.6</spark.version>
         <lombok.version>1.18.20</lombok.version>
         <auto-service.version>1.0</auto-service.version>
+        <cglib.version>3.3.0</cglib.version>
     </properties>
 
     <dependencies>
@@ -51,6 +52,11 @@
             <artifactId>auto-service</artifactId>
             <version>${auto-service.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/cglib/cglib -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${cglib.version}</version>
+        </dependency>
     </dependencies>
-
 </project>
