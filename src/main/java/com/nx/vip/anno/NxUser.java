@@ -1,5 +1,6 @@
 package com.nx.vip.anno;
 
+import com.nx.vip.anno.processor.FieldAnnotation;
 import lombok.ToString;
 
 /**
@@ -14,7 +15,9 @@ import lombok.ToString;
  */
 @ToString
 public class NxUser {
+    @FieldAnnotation("id")
     private int id;
+    @FieldAnnotation("name")
     private String name;
 
     /**
