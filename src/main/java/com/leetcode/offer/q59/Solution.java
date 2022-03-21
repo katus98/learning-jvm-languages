@@ -9,6 +9,9 @@ import java.util.PriorityQueue;
  * @version 1.0, 2022-03-21
  */
 public class Solution {
+    /**
+     * 滑动窗口取最大值
+     */
     public int[] maxSlidingWindow(int[] nums, int k) {
         if (nums == null || nums.length == 0 || k == 0) return new int[0];
         PriorityQueue<Integer> queue = new PriorityQueue<>((x, y) -> y - x);
@@ -28,6 +31,7 @@ public class Solution {
         int n = nums.length;
         Deque<Integer> deque = new LinkedList<>();
         for (int i = 0; i < k; ++i) {
+            // 当一个元素入队, 前面相对较小的元素就不会对max有影响了, 所以删除所有小的数值后入队
             while (!deque.isEmpty() && nums[i] >= nums[deque.peekLast()]) {
                 deque.pollLast();
             }
@@ -36,10 +40,12 @@ public class Solution {
         int[] ans = new int[n - k + 1];
         ans[0] = nums[deque.peekFirst()];
         for (int i = k; i < n; ++i) {
+            // 当一个元素入队, 前面相对较小的元素就不会对max有影响了, 所以删除所有小的数值后入队
             while (!deque.isEmpty() && nums[i] >= nums[deque.peekLast()]) {
                 deque.pollLast();
             }
             deque.offerLast(i);
+            // 当前滑动窗口已经到边界
             while (deque.peekFirst() <= i - k) {
                 deque.pollFirst();
             }
