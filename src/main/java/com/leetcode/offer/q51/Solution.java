@@ -29,7 +29,7 @@ public class Solution {
     public void sort(int[] nums, int left, int right, int[] temp) {
         if (left < right) {
             int mid = (left + right) / 2;   //开始递归划分
-            sort(nums, left, mid, temp);   //归并排序左部分（left, mid)
+            sort(nums, left, mid, temp);   //归并排序左部分(left, mid)
             sort(nums, mid + 1, right, temp);  //归并排序右部分(mid+1, right)
             merge(nums, left, mid, right, temp);  //合并
         }
