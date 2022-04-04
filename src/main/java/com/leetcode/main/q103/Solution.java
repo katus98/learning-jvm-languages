@@ -1,6 +1,4 @@
-package com.leetcode.main.q102;
-
-import com.leetcode.offer.q32.Solution2;
+package com.leetcode.main.q103;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -8,29 +6,34 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * 二叉树的层序遍历
+ * 二叉树的锯齿形层序遍历
  *
  * @author SUN Katus
- * @version 1.0, 2022-03-13
- * @see Solution2
+ * @version 1.0, 2022-04-04
  */
 public class Solution {
-
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> list = new ArrayList<>();
+        if (root == null) return list;
+        boolean left = true;
         Queue<TreeNode> queue = new LinkedList<>();
-        List<List<Integer>> result = new ArrayList<>();
-        if (root != null) queue.add(root);
+        queue.add(root);
         while (!queue.isEmpty()) {
-            List<Integer> levelList = new ArrayList<>();
+            LinkedList<Integer> level = new LinkedList<>();
             for (int i = queue.size(); i > 0; i--) {
                 TreeNode node = queue.poll();
-                levelList.add(node.val);
+                if (left) {
+                    level.addLast(node.val);
+                } else {
+                    level.addFirst(node.val);
+                }
                 if (node.left != null) queue.add(node.left);
                 if (node.right != null) queue.add(node.right);
             }
-            result.add(levelList);
+            list.add(level);
+            left = !left;
         }
-        return result;
+        return list;
     }
 
     public static class TreeNode {

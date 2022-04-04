@@ -1,6 +1,8 @@
 package com.leetcode.main.q160;
 
 /**
+ * 相交链表
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-18
  * @see com.leetcode.offer.q52.Solution
