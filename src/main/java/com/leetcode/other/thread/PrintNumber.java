@@ -14,6 +14,7 @@ public class PrintNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int num = scanner.nextInt();
+        scanner.close();
         for (int i = 0; i < num; i++) {
             new Thread(new MyTask(i, num)).start();
         }
