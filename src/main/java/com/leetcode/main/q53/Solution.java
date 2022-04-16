@@ -9,7 +9,6 @@ package com.leetcode.main.q53;
  * @version 1.0, 2022-04-15
  */
 public class Solution {
-
     public int maxSubArray(int[] nums) {
         int length = nums.length;
         if (length == 0) return 0;

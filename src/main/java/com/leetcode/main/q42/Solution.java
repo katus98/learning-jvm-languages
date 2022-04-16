@@ -7,7 +7,6 @@ package com.leetcode.main.q42;
  * @version 1.0, 2022-04-15
  */
 public class Solution {
-
     /**
      * 动态规划
      * i位置的水高度取决于i向左向右的最大高度中的最小值减去i位置的高度

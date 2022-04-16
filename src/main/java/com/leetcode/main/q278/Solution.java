@@ -1,13 +1,12 @@
 package com.leetcode.main.q278;
 
 /**
- * https://leetcode-cn.com/problems/first-bad-version/
+ * 第一个错误的版本
  * 
  * @author SUN Katus
  * @version 1.0, 2022-03-03
  */
 public class Solution {
-
     public int firstBadVersion(int n) {
         int left = 1, right = n;
         while (left < right) { // 循环直至区间左右端点相同
@@ -23,10 +22,7 @@ public class Solution {
     }
 
     boolean isBadVersion(int version) {
-        if (version < 1) {
-            return false;
-        }
-        return true;
+        return version >= 1;
     }
 
     public static void main(String[] args) {

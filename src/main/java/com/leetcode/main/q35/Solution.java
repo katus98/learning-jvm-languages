@@ -1,13 +1,12 @@
 package com.leetcode.main.q35;
 
 /**
- * https://leetcode-cn.com/problems/search-insert-position/
+ * 搜索插入位置
  * 
  * @author SUN Katus
  * @version 1.0, 2022-03-03
  */
 public class Solution {
-
     public int searchInsert(int[] nums, int target) {
         int left = 0, right = nums.length;
         while (left < right) {
