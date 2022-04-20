@@ -1,7 +1,7 @@
 package com.leetcode.main.q2;
 
 /**
- * https://leetcode-cn.com/problems/add-two-numbers/
+ * 两数相加
  * 
  * @author SUN Katus
  * @version 1.0, 2022-03-03
