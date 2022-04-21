@@ -8,26 +8,24 @@ package com.leetcode.main.q704;
  */
 public class Solution {
     public int search(int[] nums, int target) {
-        int start = 0, end = nums.length - 1;
-        int current = (start + end) / 2;
-        while (nums[current] != target) {
-            if (start == end || start == end - 1) {
-                break;
-            }
-            if (nums[current] > target) {
-                end = current;
+        if (nums.length == 0) return -1;
+        int i = 0, j = nums.length - 1, cur;
+        while (i < j) {
+            cur = i + (j - i) / 2;
+            if (nums[cur] > target) {
+                j = cur - 1;
+            } else if (nums[cur] < target) {
+                i = cur + 1;
             } else {
-                start = current;
+                i = cur;
+                j = cur;
             }
-            current = (start + end) / 2;
         }
-        if (nums[current] == target) {
-            return current;
+        if (nums[i] == target) {
+            return i;
+        } else {
+            return -1;
         }
-        if (nums[end] == target) {
-            return end;
-        }
-        return -1;
     }
 
     public static void main(String[] args) {

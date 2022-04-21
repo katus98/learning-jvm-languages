@@ -1,6 +1,8 @@
 package com.leetcode.main.q19;
 
 /**
+ * 删除链表的倒数第 N 个结点
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-14
  */
@@ -9,21 +11,16 @@ public class Solution {
      * 先向后走n步, 然后设置一个新的指针和之前的同步走, 直到先走的指针走到最后, 后走的指针就是倒数第n
      */
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        if (head == null) return null;
-        ListNode fakeHead = new ListNode(-1, head), before = fakeHead, current = head;
-        int i = 0;
-        while (current != null) {
-            if (i++ == n) {
-                break;
-            }
-            current = current.next;
+        ListNode dummyHead = new ListNode(-1, head), front = head, back = dummyHead;
+        while (--n != 0) {
+            front = front.next;
         }
-        while (current != null) {
-            before = before.next;
-            current = current.next;
+        while (front.next != null) {
+            back = back.next;
+            front = front.next;
         }
-        before.next = before.next.next;
-        return fakeHead.next;
+        back.next = back.next.next;
+        return dummyHead.next;
     }
 
     public static class ListNode {
