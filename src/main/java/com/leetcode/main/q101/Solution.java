@@ -1,6 +1,8 @@
 package com.leetcode.main.q101;
 
 /**
+ * 对称二叉树
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-11
  * @see com.leetcode.offer.q28.Solution
@@ -12,6 +14,9 @@ public class Solution {
         return check(root.left, root.right);
     }
 
+    /**
+     * 检查左侧和右侧对称节点是否对称
+     */
     private boolean check(TreeNode left, TreeNode right) {
         if (left != null && right != null) {
             if (left.val != right.val) {
