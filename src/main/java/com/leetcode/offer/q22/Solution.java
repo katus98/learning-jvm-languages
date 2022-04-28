@@ -1,6 +1,8 @@
 package com.leetcode.offer.q22;
 
 /**
+ * 链表中倒数第 k 个节点
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-10
  */
