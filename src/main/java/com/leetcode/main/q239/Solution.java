@@ -4,6 +4,8 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 /**
+ * 滑动窗口最大值
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-21
  * @see com.leetcode.offer.q59.Solution
