@@ -1,10 +1,13 @@
 package com.leetcode.exam.summer.hw;
 
+import com.leetcode.main.q315.Solution;
+
 import java.util.Scanner;
 
 /**
  * @author SUN Katus
  * @version 1.0, 2022-05-11
+ * @see Solution
  */
 public class Main1 {
 
