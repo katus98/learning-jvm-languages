@@ -52,4 +52,12 @@ public class HeapSort implements Sort {
     public ListNode sortChainTable(ListNode head) {
         return null;
     }
+
+    public static void main(String[] args) {
+        HeapSort heapSort = new HeapSort();
+        int[] array = heapSort.sortArray(new int[]{7, 6, 4, 7, 9, 1});
+        for (int i : array) {
+            System.out.println(i);
+        }
+    }
 }
