@@ -6,6 +6,7 @@ import java.util.Map;
 /**
  * @author SUN Katus
  * @version 1.0, 2022-03-14
+ * @see com.leetcode.main.q138.Solution
  */
 public class Solution {
     private final Map<Node, Integer> indexMap = new HashMap<>();
