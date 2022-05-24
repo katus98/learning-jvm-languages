@@ -5,6 +5,7 @@ package com.leetcode.main.q121;
  *
  * @author SUN Katus
  * @version 1.0, 2022-04-14
+ * @see com.leetcode.offer.q63.Solution
  */
 public class Solution {
     public int maxProfit(int[] prices) {
