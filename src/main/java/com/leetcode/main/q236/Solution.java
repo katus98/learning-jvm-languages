@@ -1,10 +1,13 @@
 package com.leetcode.main.q236;
 
+import com.leetcode.offer.q68.Solution2;
+
 /**
  * 二叉树的最近公共祖先
  *
  * @author SUN Katus
  * @version 1.0, 2022-04-05
+ * @see Solution2
  */
 public class Solution {
 
