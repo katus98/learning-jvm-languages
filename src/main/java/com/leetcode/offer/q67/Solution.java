@@ -1,21 +1,19 @@
-package com.leetcode.main.q8;
+package com.leetcode.offer.q67;
 
 /**
- * 字符串转换整数 (atoi)
- *
  * @author SUN Katus
- * @version 1.0, 2022-04-21
- * @see com.leetcode.offer.q67.Solution
+ * @version 1.0, 2022-05-26
+ * @see com.leetcode.main.q8.Solution
  */
 public class Solution {
     /**
      * 模拟
      */
-    public int myAtoi(String s) {
+    public int strToInt(String str) {
         int start = 0;
         // 去除前导空格
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
             if (ch != ' ') {
                 start = i;
                 break;
@@ -23,8 +21,8 @@ public class Solution {
         }
         // 从第一个非空格开始遍历
         int result = 0, sign = 1;
-        for (int i = start; i < s.length(); i++) {
-            int ch = s.charAt(i);
+        for (int i = start; i < str.length(); i++) {
+            int ch = str.charAt(i);
             // 符号位只能是第一位, 记录下符号的正负
             if (i == start && (ch == '+' || ch == '-')) {
                 sign = ch == '+' ? 1 : -1;
