@@ -3,7 +3,7 @@ package com.leetcode.offer.q63;
 /**
  * @author SUN Katus
  * @version 1.0, 2022-05-24
- * @see com.leetcode.main.q121.Solution
+ * @see com.leetcode.main.interval101.q121.Solution
  */
 public class Solution {
     public int maxProfit(int[] prices) {

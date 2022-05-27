@@ -3,7 +3,7 @@ package com.leetcode.offer.q29;
 /**
  * @author SUN Katus
  * @version 1.0, 2022-03-12
- * @see com.leetcode.main.q54.Solution
+ * @see com.leetcode.main.interval1.q54.Solution
  */
 public class Solution {
     private int[] array;

@@ -3,7 +3,7 @@ package com.leetcode.offer.q67;
 /**
  * @author SUN Katus
  * @version 1.0, 2022-05-26
- * @see com.leetcode.main.q8.Solution
+ * @see com.leetcode.main.interval1.q8.Solution
  */
 public class Solution {
     /**

@@ -7,8 +7,8 @@ import java.util.List;
 /**
  * @author SUN Katus
  * @version 1.0, 2022-03-16
- * @see com.leetcode.main.q46.Solution
- * @see com.leetcode.main.q47.Solution
+ * @see com.leetcode.main.interval1.q46.Solution
+ * @see com.leetcode.main.interval1.q47.Solution
  */
 public class Solution {
     private final List<String> list = new ArrayList<>();

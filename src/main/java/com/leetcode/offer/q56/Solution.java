@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author SUN Katus
  * @version 1.0, 2022-03-19
- * @see com.leetcode.main.q136.Solution
+ * @see com.leetcode.main.interval101.q136.Solution
  */
 public class Solution {
     /**

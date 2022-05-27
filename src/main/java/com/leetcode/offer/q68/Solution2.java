@@ -1,6 +1,6 @@
 package com.leetcode.offer.q68;
 
-import com.leetcode.main.q236.Solution;
+import com.leetcode.main.interval201.q236.Solution;
 
 /**
  * 二叉树的最近公共祖先

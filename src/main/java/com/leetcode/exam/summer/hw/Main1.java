@@ -1,6 +1,6 @@
 package com.leetcode.exam.summer.hw;
 
-import com.leetcode.main.q315.Solution;
+import com.leetcode.main.interval301.q315.Solution;
 
 import java.util.Scanner;
 

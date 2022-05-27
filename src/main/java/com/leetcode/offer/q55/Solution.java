@@ -3,7 +3,7 @@ package com.leetcode.offer.q55;
 /**
  * @author SUN Katus
  * @version 1.0, 2022-03-19
- * @see com.leetcode.main.q104.Solution
+ * @see com.leetcode.main.interval101.q104.Solution
  */
 public class Solution {
     private int maxD;
