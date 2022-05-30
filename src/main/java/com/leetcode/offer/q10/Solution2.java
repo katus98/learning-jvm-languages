@@ -3,6 +3,8 @@ package com.leetcode.offer.q10;
 import java.math.BigInteger;
 
 /**
+ * 青蛙跳台阶问题
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-08
  */

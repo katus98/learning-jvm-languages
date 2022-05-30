@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
+ * 二叉树的序列化与反序列化
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-16
  * @see com.leetcode.offer.q37.Codec

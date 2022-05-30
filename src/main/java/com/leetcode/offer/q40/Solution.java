@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 
 /**
+ * 最小的k个数
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-16
  */
