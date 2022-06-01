@@ -1,12 +1,16 @@
 package com.leetcode.main.interval1.q34;
 
 /**
+ * 在排序数组中查找元素的第一个和最后一个位置
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-18
  * @see com.leetcode.offer.q53.Solution
  */
 public class Solution {
-
+    /**
+     * 二分法查找之后前后遍历
+     */
     public int[] searchRange(int[] nums, int target) {
         if (nums.length == 0) return new int[]{-1, -1};
         int i = 0, j = nums.length - 1, c = i + (j - i) / 2;
