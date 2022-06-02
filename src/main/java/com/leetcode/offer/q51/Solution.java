@@ -1,6 +1,8 @@
 package com.leetcode.offer.q51;
 
 /**
+ * 数组中的逆序对
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-18
  */
@@ -17,6 +19,7 @@ public class Solution {
     }
 
     private int count = 0;
+
     /**
      * 归并排序
      */
