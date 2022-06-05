@@ -4,6 +4,8 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 /**
+ * 用两个栈实现队列
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-06
  */
