@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * 全排列 II
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-16
  */
@@ -25,6 +27,7 @@ public class Solution {
 
     /**
      * 递归函数
+     *
      * @param i 当前需要处理第几位字符
      * @param l 当前组合
      */
