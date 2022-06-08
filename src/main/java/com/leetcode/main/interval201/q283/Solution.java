@@ -1,11 +1,12 @@
 package com.leetcode.main.interval201.q283;
 
 /**
+ * 移动零
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-05
  */
 public class Solution {
-
     /**
      * 暴力解法
      */
