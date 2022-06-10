@@ -1,8 +1,11 @@
 package com.leetcode.offer.q42;
 
 /**
+ * 连续子数组的最大和
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-17
+ * @see com.leetcode.main.interval1.q53.Solution
  */
 public class Solution {
     /**

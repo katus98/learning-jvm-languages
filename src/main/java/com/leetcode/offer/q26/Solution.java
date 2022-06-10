@@ -4,6 +4,8 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 /**
+ * 树的子结构
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-11
  */
@@ -60,8 +62,8 @@ public class Solution {
     }
 
     boolean recur(TreeNode A, TreeNode B) {
-        if(B == null) return true;
-        if(A == null || A.val != B.val) return false;
+        if (B == null) return true;
+        if (A == null || A.val != B.val) return false;
         return recur(A.left, B.left) && recur(A.right, B.right);
     }
 

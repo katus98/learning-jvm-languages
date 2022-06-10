@@ -7,6 +7,7 @@ package com.leetcode.main.interval1.q53;
  *
  * @author SUN Katus
  * @version 1.0, 2022-04-15
+ * @see com.leetcode.offer.q42.Solution
  */
 public class Solution {
     public int maxSubArray(int[] nums) {

@@ -1,6 +1,8 @@
 package com.leetcode.offer.q4;
 
 /**
+ * 二维数组中的查找
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-06
  */
@@ -12,7 +14,7 @@ public class Solution {
     public boolean findNumberIn2DArray(int[][] matrix, int target) {
         int n = matrix.length, m = n == 0 ? 0 : matrix[0].length;
         for (int i = 0; i < n; i++) {
-            if (m > 0 && target > matrix[i][m-1]) {
+            if (m > 0 && target > matrix[i][m - 1]) {
                 continue;
             }
             int start = 0, end = m, j;
@@ -51,11 +53,11 @@ public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
         int[][] matrix = new int[5][];
-        matrix[0] = new int[]{1,4,7,11,15};
-        matrix[1] = new int[]{2,5,8,12,19};
-        matrix[2] = new int[]{3,6,9,16,22};
-        matrix[3] = new int[]{10,13,14,17,24};
-        matrix[4] = new int[]{18,21,23,26,30};
+        matrix[0] = new int[]{1, 4, 7, 11, 15};
+        matrix[1] = new int[]{2, 5, 8, 12, 19};
+        matrix[2] = new int[]{3, 6, 9, 16, 22};
+        matrix[3] = new int[]{10, 13, 14, 17, 24};
+        matrix[4] = new int[]{18, 21, 23, 26, 30};
         System.out.println(solution.findNumberIn2DArray2(matrix, 5));
     }
 }
