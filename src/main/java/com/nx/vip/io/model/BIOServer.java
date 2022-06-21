@@ -1,4 +1,4 @@
-package com.nx.vip.io.socket;
+package com.nx.vip.io.model;
 
 import com.nx.util.MyLog;
 
@@ -9,6 +9,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
+ * BIO单线程服务端实现
  * BIO的阻塞在哪里?
  * * accept会阻塞, read也会阻塞
  * 阻塞带来的问题?

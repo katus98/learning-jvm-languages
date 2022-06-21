@@ -1,4 +1,4 @@
-package com.nx.vip.io.socket;
+package com.nx.vip.io.model;
 
 import com.nx.util.MyLog;
 
@@ -11,6 +11,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
+ * BIO多线程服务端实现
  * 如果要实现并发需要客户端实现多线程
  * 每一个客户端的连接都单独开一个线程去应答
  * 会有很多线程始终处于阻塞状态无法恢复(客户端不发数据, 堵塞read), 造成资源浪费

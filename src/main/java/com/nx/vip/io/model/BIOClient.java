@@ -1,4 +1,4 @@
-package com.nx.vip.io.socket;
+package com.nx.vip.io.model;
 
 import com.nx.util.MyLog;
 
@@ -9,6 +9,8 @@ import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
 /**
+ * BIO简易客户端实现
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-29
  */

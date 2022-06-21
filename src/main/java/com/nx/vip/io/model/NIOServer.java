@@ -1,4 +1,4 @@
-package com.nx.vip.io.socket;
+package com.nx.vip.io.model;
 
 import com.nx.util.MyLog;
 
@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * NIO
- * 一个非常简易的实现
+ * 一个非常简易的Java实现
  *
  * @author SUN Katus
  * @version 1.0, 2022-03-29
@@ -45,6 +45,7 @@ public class NIOServer {
                 MyLog.info("no connection!");
             }
             // 遍历历史连接, 读取数据 (实际可以通过操作系统层面实现, 这个地方只是一个效率很低的实现)
+            // 操作系统层面对所有socket的轮询实际上就是select的功能
             for (SocketChannel channel : list) {
                 // 读取数据非阻塞
                 int size = channel.read(buffer);
