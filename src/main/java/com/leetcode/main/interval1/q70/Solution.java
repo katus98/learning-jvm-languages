@@ -10,8 +10,17 @@ import com.leetcode.offer.q10.Solution2;
  * @see Solution2
  */
 public class Solution {
-
     public int climbStairs(int n) {
+        int[] dp = new int[Math.max(2, n)];
+        dp[0] = 1;
+        dp[1] = 2;
+        for (int i = 2; i < n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+        return dp[n - 1];
+    }
+
+    public int climbStairs2(int n) {
         if (n <= 1) {
             return 1;
         } else {
