@@ -1,4 +1,4 @@
-package com.nx.vip.io.model;
+package com.nx.vip.io.bio;
 
 import com.nx.util.MyLog;
 
