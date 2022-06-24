@@ -13,7 +13,7 @@ import java.util.Set;
  * * 开启服务端监听socket
  * * 开启select监听器
  * * 将服务器监听socket注册到select监听器上
- * * 为Accept事件绑定Acceptor处理逻辑
+ * * 为Accept事件绑定AcceptHandler处理逻辑
  *
  * @author SUN Katus
  * @version 1.0, 2022-06-23
@@ -36,17 +36,17 @@ public class ReactorServer implements Runnable {
         InetSocketAddress address = new InetSocketAddress(port);
         // 服务器信道绑定IP和端口
         ssc.socket().bind(address);
-        System.out.println("Waiting for new event on port: " + ssc.socket().getLocalPort() + "...");
         // 将服务器监听socket注册到select监听器, 监听事件为接收事件OP_ACCEPT
         SelectionKey sk = ssc.register(selector, SelectionKey.OP_ACCEPT);
         // 为服务器监听socket的监听事件绑定一个处理逻辑
-        sk.attach(new ClientConnectionAcceptor(selector, ssc));
+        sk.attach(new AcceptHandler(selector, ssc));
     }
 
-    //判断你是否发生了空轮训---》1s 512
+    // 判断你是否发生了空轮训--->1s 512
     @Override
     public void run() {
-        while (!Thread.interrupted()) { // 在線程被中斷前持續運行
+        System.out.println("Waiting for new event on port: " + ssc.socket().getLocalPort() + "...");
+        while (!Thread.interrupted()) {   // 在线程被中段前持续进行
             try {
 //                selector.select(2000);   // 最多阻塞两秒
 //                selector.selectNow();   // 立马返回, 不会阻塞
@@ -66,13 +66,16 @@ public class ReactorServer implements Runnable {
                 // 每个监听到事件的socket都去执行自己绑定的额外逻辑
                 dispatch((it.next()));
                 // 移除元素
+                // 这个移除是因为selector.selectedKeys()返回的事件集合不会自己清除
+                // 如果不移除处理过的事件, 第二次调用的时候这个事件还会在集合里面, 即使实际上没有发生
                 it.remove();
             }
         }
     }
 
     private void dispatch(SelectionKey key) {
-        Runnable r = (Runnable) key.attachment(); // 根據事件之key綁定的對象開新線程
+        // 获取当前socket key绑定的处理逻辑并执行
+        Runnable r = (Runnable) key.attachment();
         if (r != null) {
             r.run();
         }
