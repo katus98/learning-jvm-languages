@@ -1,4 +1,4 @@
-package com.nx.vip.io.nio.singlethreading;
+package com.nx.vip.io.nio;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,12 +25,12 @@ public class Client {
             BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
             BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
             String input;
-            while ((input = stdIn.readLine()) != null) { // 讀取輸入
-                out.println(input);
-                out.flush();
+            while ((input = stdIn.readLine()) != null) {
                 if (input.equals("exit")) {
                     break;
                 }
+                out.println(input);
+                out.flush();
                 System.out.println("server: " + in.readLine());
             }
             client.close();
