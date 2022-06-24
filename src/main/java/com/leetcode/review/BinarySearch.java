@@ -32,6 +32,22 @@ public interface BinarySearch {
     void peakIndexInMountainArray();
 
     /**
+     * 有效的完全平方数
+     * * 最基本的二分查找
+     *
+     * @see com.leetcode.main.interval301.q367.Solution
+     */
+    void isPerfectSquare();
+
+    /**
+     * 两个数组间的距离值
+     * * 情景下的二分查找
+     *
+     * @see com.leetcode.main.interval1301.q1385.Solution
+     */
+    void findTheDistanceValue();
+
+    /**
      * 搜索插入位置
      * * 最基本的二分查找
      * * 记录的这个二分法模板退出迭代的只可能是找到目标值或者没找到start == end == 比target大一点的数的位置两种情况之一
