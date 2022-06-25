@@ -48,6 +48,26 @@ public interface BinarySearch {
     void findTheDistanceValue();
 
     /**
+     * x 的平方根
+     * * 另一种二分法模式
+     * * 不是寻找target而是寻找比target大或者小一点的元素
+     * * 借助一个额外的变量存储结果, 循环条件start <= end, 分支都需要变化区间+-1
+     *
+     * @see com.leetcode.main.interval1.q69.Solution
+     */
+    void mySqrt();
+
+    /**
+     * 寻找比目标字母大的最小字母
+     * * 另一种二分法模式
+     * * 不是寻找target而是寻找比target大或者小一点的元素
+     * * 借助一个额外的变量存储结果, 循环条件start <= end, 分支都需要变化区间+-1
+     *
+     * @see com.leetcode.main.interval701.q744.Solution
+     */
+    void nextGreatestLetter();
+
+    /**
      * 搜索插入位置
      * * 最基本的二分查找
      * * 记录的这个二分法模板退出迭代的只可能是找到目标值或者没找到start == end == 比target大一点的数的位置两种情况之一

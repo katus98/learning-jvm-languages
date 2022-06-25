@@ -8,18 +8,19 @@ package com.leetcode.main.interval1.q69;
  */
 public class Solution {
     /**
-     * 二分法
+     * 另一种二分法范式
+     * 不是寻找target而是寻找比target大或者小一点的元素
+     * 借助一个额外的变量存储结果, 循环条件start <= end, 分支都需要变化区间+-1
      */
     public int mySqrt(int x) {
-        int l = 0, r = x, ans = -1;
-        while (l <= r) {
-            int mid = l + (r - l) / 2;
-            // 注意强制类型转换
-            if ((long) mid * mid <= x) {
-                ans = mid;
-                l = mid + 1;
+        int start = 0, end = x, ans = -1;
+        while (start <= end) {
+            int cur = start + ((end - start) >> 1);
+            if ((long) cur * cur <= x) {
+                ans = cur;
+                start = cur + 1;
             } else {
-                r = mid - 1;
+                end = cur - 1;
             }
         }
         return ans;

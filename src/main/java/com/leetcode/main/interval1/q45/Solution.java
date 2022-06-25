@@ -34,18 +34,19 @@ public class Solution {
      * 正向贪心
      */
     public int jump2(int[] nums) {
-        int length = nums.length;
-        int end = 0;
-        int maxPosition = 0;
-        int steps = 0;
-        for (int i = 0; i < length - 1; i++) {
-            maxPosition = Math.max(maxPosition, i + nums[i]);
-            // 遍历到边界需要增加一次跳数, 以实现边界的最大扩展
+        int end = 0, maxDis = 0, step = 0;
+        for (int i = 0; i < nums.length - 1; i++) {
+            // 时刻更新最远可以到达的距离
+            if (i + nums[i] > maxDis) {
+                maxDis = i + nums[i];
+            }
+            // 如果当前位置是上一轮跳跃可以到达的最远处时
             if (i == end) {
-                end = maxPosition;
-                steps++;
+                // 需要增加一次跳跃, 更新当前跳跃可以到达的最远处
+                end = maxDis;
+                step++;
             }
         }
-        return steps;
+        return step;
     }
 }
