@@ -13,30 +13,27 @@ public class Solution {
      */
     public int[] searchRange(int[] nums, int target) {
         if (nums.length == 0) return new int[]{-1, -1};
-        int i = 0, j = nums.length - 1, c = i + (j - i) / 2;
-        while (i < j) {
-            if (target < nums[c]) {
-                j = c - 1;
-            } else if (target > nums[c]) {
-                i = c + 1;
+        int start = 0, end = nums.length - 1, cur;
+        while (start < end) {
+            cur = start + ((end - start) >> 1);
+            if (nums[cur] < target) {
+                start = cur + 1;
+            } else if (nums[cur] > target) {
+                end = cur;
             } else {
-                i = c;
-                j = c;
+                start = cur;
+                end = cur;
             }
-            c = i + (j - i) / 2;
         }
-        if (nums[c] == target) {
-            int count = 0;
-            int k;
-            for (k = c; k < nums.length; k++) {
-                if (nums[k] != target) break;
-            }
-            j = k - 1;
-            for (k = c - 1; k >= 0; k--) {
-                if (nums[k] != target) break;
-            }
-            i = k + 1;
-            return new int[]{i, j};
+        cur = start;
+        if (nums[cur] == target) {
+            int k = cur;
+            while (k < nums.length && nums[k] == target) k++;
+            end = k - 1;
+            k = cur - 1;
+            while (k >= 0 && nums[k] == target) k--;
+            start = k + 1;
+            return new int[]{start, end};
         }
         return new int[]{-1, -1};
     }

@@ -67,4 +67,40 @@ public interface DynamicProgramming {
      * @see com.leetcode.main.interval701.q740.Solution
      */
     void deleteAndEarn();
+
+    /**
+     * 最长递增子序列
+     * * dp[i] = 符合条件的dp中最大的数 + 1
+     * * d1DP: dp[i] = dp[j] + 1
+     *
+     * @see com.leetcode.main.interval201.q300.Solution
+     */
+    void lengthOfLIS();
+
+    /**
+     * 最长递增子序列的个数
+     * * dp[i] = 符合条件的dp中最大的数 + 1
+     * * count[i] = 同时记录某个位置结尾的最长子序列数量
+     * * d1DP: dp[i] = dp[j] + 1
+     *
+     * @see com.leetcode.main.interval601.q673.Solution
+     */
+    void findNumberOfLIS();
+
+    /**
+     * 最大子数组和
+     * * dp表示以当前元素结尾的最大子数组和
+     * * d1DP: dp[i] = Math.max(dp[i - 1] + nums[i], nums[i])
+     *
+     * @see com.leetcode.main.interval1.q53.Solution
+     */
+    void maxSubArray();
+
+    /**
+     * 环形子数组的最大和
+     * * 环形子数组的最大和 = Math.max(最大子数组和, 总和 - [1, n-2]最小子数组和)
+     *
+     * @see com.leetcode.main.interval901.q918.Solution
+     */
+    void maxSubarraySumCircular();
 }

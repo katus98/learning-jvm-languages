@@ -11,17 +11,15 @@ package com.leetcode.main.interval1.q53;
  */
 public class Solution {
     public int maxSubArray(int[] nums) {
-        int length = nums.length;
-        if (length == 0) return 0;
-        int[] dp = new int[length];
+        int[] dp = new int[nums.length];
         dp[0] = nums[0];
-        for (int i = 1; i < length; i++) {
+        int maxSum = dp[0];
+        for (int i = 1; i < dp.length; i++) {
             dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
+            if (maxSum < dp[i]) {
+                maxSum = dp[i];
+            }
         }
-        int max = Integer.MIN_VALUE;
-        for (int num : dp) {
-            if (num > max) max = num;
-        }
-        return max;
+        return maxSum;
     }
 }

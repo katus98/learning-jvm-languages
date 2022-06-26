@@ -7,21 +7,24 @@ package com.leetcode.main.interval201.q278;
  * @version 1.0, 2022-03-03
  */
 public class Solution {
+    /**
+     * 最基本的二分查找, 单向查找, 退出条件就是结果
+     */
     public int firstBadVersion(int n) {
-        int left = 1, right = n;
-        while (left < right) { // 循环直至区间左右端点相同
-            int mid = left + (right - left) / 2; // 防止计算时溢出
-            if (isBadVersion(mid)) {
-                right = mid; // 答案在区间 [left, mid] 中
+        int start = 1, end = n, cur;
+        while (start < end) { // 循环直至区间左右端点相同
+            cur = start + ((end - start) >> 1); // 防止计算时溢出
+            if (isBadVersion(cur)) {
+                end = cur; // 答案在区间 [start, cur] 中
             } else {
-                left = mid + 1; // 答案在区间 [mid+1, right] 中
+                start = cur + 1; // 答案在区间 [cur+1, end] 中
             }
         }
-        // 此时有 left == right，区间缩为一个点，即为答案
-        return left;
+        // 此时有 start == end，区间缩为一个点，即为答案
+        return start;
     }
 
-    boolean isBadVersion(int version) {
+    private boolean isBadVersion(int version) {
         return version >= 1;
     }
 

@@ -85,4 +85,20 @@ public interface BinarySearch {
      * @see com.leetcode.main.interval1.q33.Solution
      */
     void searchRotateArray();
+
+    /**
+     * 第一个错误的版本
+     * * 最基本的二分查找, 单向判断, 退出条件为查找结果
+     *
+     * @see com.leetcode.main.interval201.q278.Solution
+     */
+    void firstBadVersion();
+
+    /**
+     * 在排序数组中查找元素的第一个和最后一个位置
+     * * 最基本的二分法
+     *
+     * @see com.leetcode.main.interval1.q34.Solution
+     */
+    void searchRange();
 }
