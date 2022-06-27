@@ -101,4 +101,21 @@ public interface BinarySearch {
      * @see com.leetcode.main.interval1.q34.Solution
      */
     void searchRange();
+
+    /**
+     * 排列硬币
+     * * 最基本的单向二分法之中间值靠右
+     *
+     * @see com.leetcode.main.interval401.q441.Solution
+     */
+    void arrangeCoins();
+
+    /**
+     * 第 k 个缺失的正整数
+     * * 结果等于缺失的数量 + 第一个满足大于缺失值的位置索引号
+     * * 如果跳出循环的时候arr[start] - start - 1 >= k 不成立, 说明缺失值超过最后一个元素
+     *
+     * @see com.leetcode.main.interval1501.q1539.Solution
+     */
+    void findKthPositive();
 }

@@ -8,7 +8,7 @@ package com.leetcode.main.interval1101.q1143;
  */
 public class Solution {
     /**
-     * 二维DP
+     * d2DP
      * dp[i][j] text1前i个字符和text2前j个字符的最长公共子序列, i j只要有一个是0, dp=0
      * 当第i个text1字符等于第j个text2字符时, dp[i][j] = dp[i - 1][j - 1] + 1;
      * 如果不相等, dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
