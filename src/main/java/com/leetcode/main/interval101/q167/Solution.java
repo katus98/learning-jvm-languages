@@ -1,6 +1,8 @@
 package com.leetcode.main.interval101.q167;
 
 /**
+ * 两数之和 II - 输入有序数组
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-05
  */

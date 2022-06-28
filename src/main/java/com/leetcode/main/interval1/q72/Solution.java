@@ -28,12 +28,17 @@ public class Solution {
         }
         for (int i = 1; i < m + 1; i++) {
             for (int j = 1; j < n + 1; j++) {
+                // 左侧通过删除或者插入元素实现因此+1
                 int left = dp[i - 1][j] + 1;
+                // 下侧通过删除或者插入元素实现因此+1
                 int down = dp[i][j - 1] + 1;
+                // 左下如果当前元素相等则不用变
                 int ld = dp[i - 1][j - 1];
                 if (word1.charAt(i - 1) != word2.charAt(j - 1)) {
+                    // 如果两个元素不同则通过替换元素+1
                     ld += 1;
                 }
+                // 获取上述三者的最小值
                 dp[i][j] = left < down ? Math.min(left, ld) : Math.min(down, ld);
             }
         }

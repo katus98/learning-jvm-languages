@@ -125,6 +125,18 @@ public interface DynamicProgramming {
     void minDistance();
 
     /**
+     * 编辑距离
+     * * dp[i][j] 字符串1前i项和字符串2前j项形成同样字符串需要的操作数
+     * * 当i或者j为0时, dp的数值等于另一个不为0的索引值
+     * * dp的值是由左侧、下侧和左下侧的数值决定的, 左侧和下侧都是通过插入删除元素实现, 因此必然+1, 左下侧是通过替换元素来实现, 如果下一位恰好相等, 就不需要+1了
+     * * d2DP: left = left + 1, down = down + 1, ld = text1.charAt(i - 1) != text2.charAt(j - 1) ? ld + 1 : ld
+     * * d2DP: dp[i][j] = left < down ? Math.min(left, ld) : Math.min(down, ld)
+     *
+     * @see com.leetcode.main.interval1.q72.Solution
+     */
+    void minDistance2();
+
+    /**
      * 乘积最大子数组
      * * 以i结尾的乘积最大值等于前一位的最大值*当前位置, 当前位置, 前一位最小值*当前位置 三者最大值
      * * d1DP: maxF[i] = Math.max(maxF[i - 1] * nums[i], nums[i], minF[i - 1] * nums[i])
@@ -142,4 +154,22 @@ public interface DynamicProgramming {
      * @see com.leetcode.main.interval1501.q1567.Solution
      */
     void getMaxLen();
+
+    /**
+     * 零钱兑换
+     * * DP 表示i金额破钱的最小张数
+     * * DP dp[i]等于每个零钱面值coin对应的dp[i - coin]中的最小值 + 1
+     * * d1DP: dp[i] = Math.min(dp[i], dp[i - coin] + 1)
+     *
+     * @see com.leetcode.main.interval301.q322.Solution
+     */
+    void coinChange();
+
+    /**
+     * 最佳观光组合
+     * * DP 求 values[i] + i + values[j] - j 的最大值相当于更新values[i] + i最大值同时遍历j即可
+     *
+     * @see com.leetcode.main.interval1001.q1014.Solution
+     */
+    void maxScoreSightseeingPair();
 }
