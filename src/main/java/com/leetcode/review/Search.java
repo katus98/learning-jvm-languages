@@ -133,6 +133,14 @@ public interface Search {
          * @see com.leetcode.main.interval1601.q1608.Solution
          */
         void specialArray();
+
+        /**
+         * 搜索二维矩阵
+         * * 将二维矩阵映射到一维数组然后二分
+         *
+         * @see com.leetcode.main.interval1.q74.Solution
+         */
+        void searchMatrix();
     }
 
     /**

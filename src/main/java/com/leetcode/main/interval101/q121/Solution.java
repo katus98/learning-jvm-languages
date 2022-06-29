@@ -8,6 +8,9 @@ package com.leetcode.main.interval101.q121;
  * @see com.leetcode.offer.q63.Solution
  */
 public class Solution {
+    /**
+     * 遍历整个序列, 最大利润一定出现在当前价格卖出, 当前之前的最低价格买入
+     */
     public int maxProfit(int[] prices) {
         int minMoney = Integer.MAX_VALUE;   // i天之前的历史最低价
         int maxProfit = Integer.MIN_VALUE;   // 当前的最大利润

@@ -17,19 +17,19 @@ public class Solution {
         this.matrix = matrix;
         this.m = matrix.length;
         this.n = m > 0 ? matrix[0].length : 0;
-        int i = 0, j = m * n - 1, c = i;
-        while (i < j) {
-            c = i + (j - i) / 2;
-            if (array(c) > target) {
-                j = c;
-            } else if (array(c) < target) {
-                i = c + 1;
+        int start = 0, end = m * n - 1, cur;
+        while (start < end) {
+            cur = start + ((end - start) >> 1);
+            if (array(cur) > target) {
+                end = cur;
+            } else if (array(cur) < target) {
+                start = cur + 1;
             } else {
-                i = c;
-                j = c;
+                start = cur;
+                end = cur;
             }
         }
-        return array(i) == target;
+        return array(start) == target;
     }
 
     private int array(int i) {
