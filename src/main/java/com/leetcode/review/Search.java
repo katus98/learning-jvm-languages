@@ -141,6 +141,22 @@ public interface Search {
          * @see com.leetcode.main.interval1.q74.Solution
          */
         void searchMatrix();
+
+        /**
+         * 矩阵中战斗力最弱的 K 行
+         * * 多个单向二分查找组合 + 统计
+         *
+         * @see com.leetcode.main.interval1301.q1337.Solution
+         */
+        void kWeakestRows();
+
+        /**
+         * 检查整数及其两倍数是否存在
+         * * 要注意二分时正负处理逻辑不同
+         *
+         * @see com.leetcode.main.interval1301.q1346.Solution
+         */
+        void checkIfExist();
     }
 
     /**

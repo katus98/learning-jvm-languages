@@ -13,10 +13,10 @@ public class Solution {
      * i位置向左向右的最大高度可以通过动态规划计算
      * maxLeft[i] = Math.max(maxLeft[i - 1], height[i]);
      * maxRight[i] = Math.max(maxRight[i + 1], height[i]);
+     * val[i] = Math.min(maxLeft[i], maxRight[i]) - height[i];
      */
     public int trap(int[] height) {
         int length = height.length;
-        if (length == 0) return 0;
         int[] maxLeft = new int[length], maxRight = new int[length];
         maxLeft[0] = height[0];
         for (int i = 1; i < length; i++) {

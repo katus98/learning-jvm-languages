@@ -214,4 +214,24 @@ public interface DynamicProgramming {
      * @see com.leetcode.main.interval701.q714.Solution
      */
     void maxProfitT();
+
+    /**
+     * 单词拆分
+     * * DP: 前i个字符是否可以被单词集合中的单词组成
+     * * d1DP: dp[i] = dp[j] && wordSet.contains(s.substring(j, i))
+     *
+     * @see com.leetcode.main.interval101.q139.Solution
+     */
+    void wordBreak();
+
+    /**
+     * 接雨水
+     * * DP i位置的水高度取决于i向左向右的最大高度中的最小值减去i位置的高度
+     * * d1DP: maxLeft[i] = Math.max(maxLeft[i - 1], height[i])
+     * * d1DP: maxRight[i] = Math.max(maxRight[i + 1], height[i])
+     * * d1DP: val[i] = Math.min(maxLeft[i], maxRight[i]) - height[i]
+     *
+     * @see com.leetcode.main.interval1.q42.Solution
+     */
+    void trap();
 }
