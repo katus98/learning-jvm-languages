@@ -234,4 +234,23 @@ public interface DynamicProgramming {
      * @see com.leetcode.main.interval1.q42.Solution
      */
     void trap();
+
+    /**
+     * 等差数列划分
+     * * DP 以i元素结尾的等差数列的数量
+     * * d1DP: dp[i] = dp[i - 1] + 1 (当 nums[i - 1] - nums[i - 2] == nums[i] - nums[i - 1])
+     *
+     * @see com.leetcode.main.interval401.q413.Solution
+     */
+    void numberOfArithmeticSlices();
+
+    /**
+     * 解码方法
+     * * DP 表示长度为i的s前缀所能形成的解码个数
+     * * d1DP: dp[i] += dp[i - 1] (当i是一个有效的解码时)
+     * * d1DP: dp[i] += dp[i - 2] (当i与i-1组合是一个有效的解码时)
+     *
+     * @see com.leetcode.main.interval1.q91.Solution
+     */
+    void numDecodings();
 }

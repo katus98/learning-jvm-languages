@@ -13,15 +13,14 @@ public class Solution {
     public int numDecodings(String s) {
         int[] dp = new int[s.length() + 1];
         dp[0] = 1;
-        for (int i = 1; i < dp.length; i++) {
+        for (int i = 1; i <= s.length(); i++) {
             char ch = s.charAt(i - 1);
             if (ch >= '1' && ch <= '9') {
                 dp[i] += dp[i - 1];
             }
             if (i > 1) {
-                char ch1 = s.charAt(i - 2);
-                char ch2 = s.charAt(i - 1);
-                if ((ch1 == '1' && ch2 >= '0' && ch2 <= '9') || (ch1 == '2' && ch2 >= '0' && ch2 <= '6')) {
+                char ch0 = s.charAt(i - 2);
+                if ((ch0 == '1' && ch >= '0' && ch <= '9') || (ch0 == '2' && ch >= '0' && ch <= '6')) {
                     dp[i] += dp[i - 2];
                 }
             }
