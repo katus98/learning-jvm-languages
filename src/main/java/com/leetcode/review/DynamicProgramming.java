@@ -253,4 +253,22 @@ public interface DynamicProgramming {
      * @see com.leetcode.main.interval1.q91.Solution
      */
     void numDecodings();
+
+    /**
+     * 丑数 II
+     * * DP 第i个丑数
+     * * d1DP: dp[i] = Math.min(2 * dp[n1], 3 * dp[n2], 5 * dp[n3])
+     *
+     * @see com.leetcode.main.interval201.q264.Solution
+     */
+    void nthUglyNumber2();
+
+    /**
+     * 不同的二叉搜索树
+     * * DP: 表示n个数所可以形成的二叉搜索树数量
+     * * d1DP: dp[i] += dp[j] * dp[i - j - 1] (j表示左子树节点数, 0<=j<i)
+     *
+     * @see com.leetcode.main.interval1.q96.Solution
+     */
+    void numTrees();
 }

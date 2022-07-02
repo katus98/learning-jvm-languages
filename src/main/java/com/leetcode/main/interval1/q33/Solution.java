@@ -9,7 +9,6 @@ package com.leetcode.main.interval1.q33;
  */
 public class Solution {
     public int search(int[] nums, int target) {
-        if (nums.length == 0) return -1;
         return search(nums, 0, nums.length - 1, target);
     }
 
@@ -17,37 +16,32 @@ public class Solution {
         if (start == end) {
             return nums[start] == target ? start : -1;
         }
-        int c = start + (end - start) / 2, res1, res2;
-        if (nums[c] > nums[end]) {
-            if (target < nums[start] || target > nums[c]) {
-                res1 = -1;
-            } else {
-                res1 = searchB(nums, start, c, target);
-            }
-            // c + 1 是可行的, c 是不可行的, 会造成死循环
-            res2 = search(nums, c + 1, end, target);
+        int cur = start + ((end - start) >> 1);
+        int res1, res2;
+        if (nums[cur] > nums[end]) {
+            res1 = searchB(nums, start, cur, target);
+            // 此处可以额外判断是否调用
+            // 而且需要注意必须是cur + 1
+            res2 = search(nums, cur + 1, end, target);
         } else {
-            res1 = search(nums, start, c, target);
-            if (target < nums[c + 1] || target > nums[end]) {
-                res2 = -1;
-            } else {
-                res2 = searchB(nums, c + 1, end, target);
-            }
+            // 此处可以额外判断是否调用
+            res1 = search(nums, start, cur, target);
+            res2 = searchB(nums, cur + 1, end, target);
         }
-        return res1 == -1 ? res2 : res1;
+        return Math.max(res1, res2);
     }
 
     private int searchB(int[] nums, int start, int end, int target) {
-        int c;
+        int cur;
         while (start < end) {
-            c = start + (end - start) / 2;
-            if (target > nums[c]) {
-                start = c + 1;
-            } else if (target < nums[c]) {
-                end = c - 1;
+            cur = start + ((end - start) >> 1);
+            if (nums[cur] > target) {
+                end = cur;
+            } else if (nums[cur] < target) {
+                start = cur + 1;
             } else {
-                start = c;
-                end = c;
+                start = cur;
+                end = cur;
             }
         }
         return nums[start] == target ? start : -1;
