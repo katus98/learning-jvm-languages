@@ -157,6 +157,14 @@ public interface Search {
          * @see com.leetcode.main.interval1301.q1346.Solution
          */
         void checkIfExist();
+
+        /**
+         * 寻找旋转排序数组中的最小值
+         * * 通过比较中间值和右侧界限值的大小进行二分
+         *
+         * @see com.leetcode.main.interval101.q153.Solution
+         */
+        void findMin();
     }
 
     /**

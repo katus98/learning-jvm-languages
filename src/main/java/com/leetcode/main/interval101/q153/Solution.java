@@ -14,14 +14,13 @@ public class Solution {
         return findMin(nums, 0, nums.length - 1);
     }
 
-    private int findMin(int[] nums, int i, int j) {
-        if (i == j) return nums[i];
-        if (j - i == 1) return Math.min(nums[i], nums[j]);
-        int c = i + (j - i) / 2;
-        if (nums[j] > nums[c]) {
-            return findMin(nums, i, c);
+    private int findMin(int[] nums, int start, int end) {
+        if (start == end) return nums[start];
+        int cur = start + ((end - start) >> 1);
+        if (nums[end] > nums[cur]) {
+            return findMin(nums, start, cur);
         } else {
-            return findMin(nums, c, j);
+            return findMin(nums, cur + 1, end);
         }
     }
 }
