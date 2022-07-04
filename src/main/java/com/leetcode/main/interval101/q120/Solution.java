@@ -11,6 +11,7 @@ import java.util.List;
 public class Solution {
     /**
      * DP二维 三角形
+     * d2DP: dp[i][j] = Math.min(dp[i - 1][j - 1], dp[i - 1][j]) + triangle.get(i).get(j)
      */
     public int minimumTotal(List<List<Integer>> triangle) {
         int[][] dp = new int[triangle.size()][triangle.size()];
