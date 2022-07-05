@@ -271,4 +271,23 @@ public interface DynamicProgramming {
      * @see com.leetcode.main.interval1.q96.Solution
      */
     void numTrees();
+
+    /**
+     * 矩阵区域和
+     * * DP: 表示以当前元素为右下角, 矩阵左上角为左上角的矩形的和
+     * * d2DP: dp[i][j] = dp[i - 1][j] + dp[i][j - 1] - dp[i - 1][j - 1] + mat[i][j]
+     * * answer = DP右下角 - DP右上角 - DP左下角 + DP左上角
+     *
+     * @see com.leetcode.main.interval1301.q1314.Solution
+     */
+    void matrixBlockSum();
+
+    /**
+     * 二维区域和检索 - 矩阵不可变
+     * * DP: 二维左上角前缀和
+     * * d2DP: dp[i][j] = dp[i - 1][j] + dp[i][j - 1] - dp[i - 1][j - 1] + mat[i][j]
+     *
+     * @see com.leetcode.main.interval301.q304.NumMatrix
+     */
+    void sumRegion();
 }
