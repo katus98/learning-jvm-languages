@@ -290,4 +290,22 @@ public interface DynamicProgramming {
      * @see com.leetcode.main.interval301.q304.NumMatrix
      */
     void sumRegion();
+
+    /**
+     * 三角形最小路径和
+     * * DP 表示以当前元素结尾的最小路径和
+     * * d2DP: dp[i][j] = Math.min(dp[i - 1][j - 1], dp[i - 1][j]) + triangle.get(i).get(j)
+     *
+     * @see com.leetcode.main.interval101.q120.Solution
+     */
+    void minimumTotal();
+
+    /**
+     * 下降路径最小和
+     * * DP 表示以当前元素结尾的最小路径和
+     * * d2DP: dp[i][j] = matrix[i][j] + Math.min(dp[i - 1][j], dp[i - 1][j + 1], dp[i - 1][j - 1])
+     *
+     * @see com.leetcode.main.interval901.q931.Solution
+     */
+    void minFallingPathSum();
 }
