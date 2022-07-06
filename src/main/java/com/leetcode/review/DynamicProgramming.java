@@ -308,4 +308,23 @@ public interface DynamicProgramming {
      * @see com.leetcode.main.interval901.q931.Solution
      */
     void minFallingPathSum();
+
+    /**
+     * 不同路径
+     * * DP 到达当前位置的路径总和 (上方+左方)
+     * * d2DP: dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
+     *
+     * @see com.leetcode.main.interval1.q62.Solution
+     */
+    void uniquePaths();
+
+    /**
+     * 不同路径 II
+     * * 到达当前位置的路径总和 (上方+左方)
+     * * d2DP: dp[i][j] = dp[i - 1][j] + dp[i][j - 1] (当前位置不是障碍物)
+     * * d2DP: dp[i][j] = 0 (当前位置是障碍物)
+     *
+     * @see com.leetcode.main.interval1.q63.Solution
+     */
+    void uniquePathsWithObstacles();
 }
