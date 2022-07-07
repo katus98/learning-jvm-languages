@@ -327,4 +327,22 @@ public interface DynamicProgramming {
      * @see com.leetcode.main.interval1.q63.Solution
      */
     void uniquePathsWithObstacles();
+
+    /**
+     * 最小路径和
+     * * DP 到达当前位置的最小路径和
+     * * d2DP: dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j]
+     *
+     * @see com.leetcode.main.interval1.q64.Solution
+     */
+    void minPathSum();
+
+    /**
+     * 最大正方形
+     * * DP 以当前位置为右下角的最大正方形边长
+     * * d2DP: dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1
+     *
+     * @see com.leetcode.main.interval201.q221.Solution
+     */
+    void maximalSquare();
 }

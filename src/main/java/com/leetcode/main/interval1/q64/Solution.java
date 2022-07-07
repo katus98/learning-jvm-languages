@@ -38,12 +38,12 @@ public class Solution {
     }
 
     /**
-     * 简单二维DP
+     * DP 到达当前位置的最小路径和
+     * d2DP: dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j]
      */
     public int minPathSum2(int[][] grid) {
         this.m = grid.length;
         this.n = m > 0 ? grid[0].length : 0;
-        if (m == 0 || n == 0) return 0;
         int[][] dp = new int[m][n];
         dp[0][0] = grid[0][0];
         for (int i = 1; i < m; i++) {
