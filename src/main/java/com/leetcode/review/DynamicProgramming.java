@@ -345,4 +345,14 @@ public interface DynamicProgramming {
      * @see com.leetcode.main.interval201.q221.Solution
      */
     void maximalSquare();
+
+    /**
+     * 最长回文子序列
+     * * DP 表示[i, j]最长回文序列长度
+     * * d2DP: dp[i][j] = dp[i + 1][j - 1] + 2 (s[i]==s[j])
+     * * d2DP: dp[i][j] = Math.max(dp[i + 1][j], dp[i][j - 1]) (s[i]!=s[j])
+     *
+     * @see com.leetcode.main.interval501.q516.Solution
+     */
+    void longestPalindromeSubseq();
 }
