@@ -355,4 +355,13 @@ public interface DynamicProgramming {
      * @see com.leetcode.main.interval501.q516.Solution
      */
     void longestPalindromeSubseq();
+
+    /**
+     * 摆动序列
+     * * DP 表示到i为止的前缀中递增/递减结尾的摆动序列长度最大值
+     * * d1DP: up[i] = Math.max(up[i - 1], down[i - 1] + 1) / down[i] = Math.max(up[i - 1] + 1, down[i - 1])
+     *
+     * @see com.leetcode.main.interval301.q376.Solution
+     */
+    void wiggleMaxLength();
 }

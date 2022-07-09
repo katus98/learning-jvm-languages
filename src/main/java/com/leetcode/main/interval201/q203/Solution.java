@@ -4,8 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 /**
- * 给你一个链表的头节点 head 和一个整数 val, 请你删除链表中所有满足 Node.val == val 的节点, 并返回 新的头节点
- * 链接: https://leetcode-cn.com/problems/remove-linked-list-elements/
+ * 移除链表元素
  *
  * @author SUN Katus
  * @version 1.0, 2021-07-26
@@ -16,16 +15,15 @@ public class Solution {
      * 思路: 将不需要删除的节点挪动到新的链表上
      */
     public ListNode removeElements(ListNode head, int val) {
-        ListNode dummyHead = new ListNode();
-        ListNode prev = dummyHead;
+        ListNode dummyHead = new ListNode(), end = dummyHead;
         while (head != null) {
             if (head.val != val) {
-                prev.next = head;
-                prev = prev.next;
+                end.next = head;
+                end = end.next;
             }
             head = head.next;
         }
-        prev.next = null;
+        end.next = null;
         return dummyHead.next;
     }
 
