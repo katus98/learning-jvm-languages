@@ -8,14 +8,14 @@ package com.leetcode.main.interval1.q83;
  */
 public class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-        ListNode current = head, realNext = current;
-        while (current != null) {
-            realNext = current.next;
-            while (realNext != null && realNext.val == current.val) {
-                realNext = realNext.next;
+        ListNode cur = head, nex;
+        while (cur != null) {
+            nex = cur.next;
+            while (nex != null && cur.val == nex.val) {
+                nex = nex.next;
             }
-            current.next = realNext;
-            current = realNext;
+            cur.next = nex;
+            cur = nex;
         }
         return head;
     }
