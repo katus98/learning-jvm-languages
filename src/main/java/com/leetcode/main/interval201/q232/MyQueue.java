@@ -20,29 +20,25 @@ public class MyQueue {
     }
 
     public void push(int x) {
-        stack1.addFirst(x);
+        stack1.push(x);
     }
 
     public int pop() {
-        // 如果出队堆栈为空
         if (stack2.isEmpty()) {
-            // 将入队堆栈全部压入出队堆栈
             while (!stack1.isEmpty()) {
-                stack2.addFirst(stack1.removeFirst());
+                stack2.push(stack1.pop());
             }
         }
-        return stack2.removeFirst();
+        return stack2.pop();
     }
 
     public int peek() {
-        // 如果出队堆栈为空
         if (stack2.isEmpty()) {
-            // 将入队堆栈全部压入出队堆栈
             while (!stack1.isEmpty()) {
-                stack2.addFirst(stack1.removeFirst());
+                stack2.push(stack1.pop());
             }
         }
-        return stack2.peekFirst();
+        return stack2.peek();
     }
 
     public boolean empty() {

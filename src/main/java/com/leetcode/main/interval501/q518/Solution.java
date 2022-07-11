@@ -34,6 +34,7 @@ public class Solution {
 
     /**
      * DP 背包问题
+     * 一定要注意硬币是外层循环否则会重复
      */
     public int change2(int amount, int[] coins) {
         int[] dp = new int[amount + 1];

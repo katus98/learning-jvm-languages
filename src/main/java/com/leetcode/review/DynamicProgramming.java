@@ -166,6 +166,15 @@ public interface DynamicProgramming {
     void coinChange();
 
     /**
+     * 零钱兑换 II
+     * * DP 表示价格为i的兑换方法数量
+     * * d1DP: dp[i] += dp[i - coin] (先循环零钱, 再循环i, 否则会重复)
+     *
+     * @see com.leetcode.main.interval501.q518.Solution
+     */
+    void change();
+
+    /**
      * 最佳观光组合
      * * DP 求 values[i] + i + values[j] - j 的最大值相当于更新values[i] + i最大值同时遍历j即可
      *

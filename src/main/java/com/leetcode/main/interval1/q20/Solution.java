@@ -1,8 +1,7 @@
 package com.leetcode.main.interval1.q20;
 
-import org.junit.jupiter.api.Test;
-
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * 有效的括号
@@ -14,7 +13,7 @@ import java.util.Stack;
 public class Solution {
 
     public boolean isValid(String s) {
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> stack = new LinkedList<>();
         char[] chars = s.toCharArray();
         for (char aChar : chars) {
             if (aChar == '(' || aChar == '[' || aChar == '{') {
@@ -39,12 +38,12 @@ public class Solution {
         return stack.isEmpty();
     }
 
-    @Test
-    void test() {
-        System.out.println(isValid("()"));
-        System.out.println(isValid("()[]{}"));
-        System.out.println(isValid("(]"));
-        System.out.println(isValid("([)]"));
-        System.out.println(isValid("{[]}"));
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        System.out.println(solution.isValid("()"));
+        System.out.println(solution.isValid("()[]{}"));
+        System.out.println(solution.isValid("(]"));
+        System.out.println(solution.isValid("([)]"));
+        System.out.println(solution.isValid("{[]}"));
     }
 }
