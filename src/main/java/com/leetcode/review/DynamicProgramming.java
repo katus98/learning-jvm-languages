@@ -373,4 +373,32 @@ public interface DynamicProgramming {
      * @see com.leetcode.main.interval301.q376.Solution
      */
     void wiggleMaxLength();
+
+    /**
+     * 组合总和 Ⅳ
+     * * DP 目标值为i的组合总数
+     * * d1DP: dp[i] += dp[i - num] (先循环i, 再循环nums, 否则会去重)
+     *
+     * @see com.leetcode.main.interval301.q377.Solution
+     */
+    void combinationSum4();
+
+    /**
+     * 整数拆分
+     * * DP 目标值为i的整数拆分的乘积最大值
+     * * 实际上就是在一直获取最大值j * (i - j)即i-j不拆分 j * dp[i - j]即i-j继续拆分
+     * * d1DP: dp[i] = Math.max(dp[i], j * (i - j), j * dp[i - j])
+     *
+     * @see com.leetcode.main.interval301.q343.Solution
+     */
+    void integerBreak();
+
+    /**
+     * 完全平方数
+     * * DP 目标值为i的完全平方数组成个数最小值
+     * * d1DP: dp[i] = Math.min(dp[i], dp[i - j * j] + 1)
+     *
+     * @see com.leetcode.main.interval201.q279.Solution
+     */
+    void numSquares();
 }

@@ -1,6 +1,8 @@
 package com.leetcode.main.interval1.q94;
 
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -18,12 +20,34 @@ public class Solution {
         return list;
     }
 
+    /**
+     * 递归实现
+     */
     private void inorder(TreeNode root) {
         if (root != null) {
             inorder(root.left);
             list.add(root.val);
             inorder(root.right);
         }
+    }
+
+    /**
+     * 迭代实现
+     */
+    public List<Integer> inorderTraversal2(TreeNode root) {
+        list.clear();
+        Deque<TreeNode> stack = new LinkedList<>();
+        TreeNode node = root;
+        while (node != null || !stack.isEmpty()) {
+            while (node != null) {
+                stack.push(node);
+                node = node.left;
+            }
+            node = stack.pop();
+            list.add(node.val);
+            node = node.right;
+        }
+        return list;
     }
 
     public static class TreeNode {
