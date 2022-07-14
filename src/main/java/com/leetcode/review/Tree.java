@@ -32,4 +32,20 @@ public interface Tree {
      * @see com.leetcode.main.interval101.q101.Solution
      */
     void isSymmetric();
+
+    /**
+     * 翻转二叉树
+     * * 递归 左右节点结果交换位置
+     *
+     * @see com.leetcode.main.interval201.q226.Solution
+     */
+    void invertTree();
+
+    /**
+     * 路径总和
+     * * 递归 注意递归出口是叶子节点而不是null节点
+     *
+     * @see com.leetcode.main.interval101.q112.Solution
+     */
+    void hasPathSum();
 }

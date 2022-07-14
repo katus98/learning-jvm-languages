@@ -8,7 +8,9 @@ package com.leetcode.main.interval201.q226;
  * @see com.leetcode.offer.q27.Solution
  */
 public class Solution {
-
+    /**
+     * 递归
+     */
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
         TreeNode left = invertTree(root.left);
