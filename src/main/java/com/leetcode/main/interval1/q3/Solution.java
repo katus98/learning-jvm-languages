@@ -1,9 +1,10 @@
 package com.leetcode.main.interval1.q3;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 无重复字符最长子串
- * https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
- * 双指针, 双指针中间的符合题意, 每次后指针向后走一位, 检查是否与旧有字符串重复, 去掉重复字符前面的部分, 循环
  * 
  * @author SUN Katus
  * @version 1.0, 2022-03-03
@@ -22,6 +23,27 @@ public class Solution {
             }
             sb.append(s.charAt(i));
             maxLength = Math.max(maxLength, sb.length());
+        }
+        return maxLength;
+    }
+
+    /**
+     * 为了避免使用高级API而产生高复杂度
+     */
+    public int lengthOfLongestSubstring2(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        int maxLength = 0, i = 0;
+        for (int j = 0; j < s.length(); j++) {
+            char ch = s.charAt(j);
+            if (map.containsKey(ch)) {
+                int nexI = map.get(ch);
+                for (int k = i; k <= nexI; k++) {
+                    map.remove(s.charAt(k));
+                }
+                i = nexI + 1;
+            }
+            map.put(ch, j);
+            maxLength = Math.max(maxLength, map.size());
         }
         return maxLength;
     }
