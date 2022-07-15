@@ -48,4 +48,20 @@ public interface Tree {
      * @see com.leetcode.main.interval101.q112.Solution
      */
     void hasPathSum();
+
+    /**
+     * 二叉搜索树中的搜索
+     * * 递归 根据大小判断子节点选择
+     *
+     * @see com.leetcode.main.interval601.q700.Solution
+     */
+    void searchBST();
+
+    /**
+     * 二叉搜索树中的插入操作
+     * * 迭代
+     *
+     * @see com.leetcode.main.interval701.q701.Solution
+     */
+    void insertIntoBST();
 }

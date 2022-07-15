@@ -11,16 +11,19 @@ public class Solution {
      * 双指针
      */
     public boolean isSubsequence(String s, String t) {
-        if (s.equals(t)) return true;
-        int k = 0;
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            while (k < t.length() && ch != t.charAt(k)) {
-                k++;
+        if (s.equals(t) || s.isEmpty()) return true;
+        int i = 0;
+        for (int j = 0; j < t.length(); j++) {
+            if (s.charAt(i) == t.charAt(j)) {
+                i++;
             }
-            if (k == t.length()) return false;
-            k++;
+            if (i == s.length()) return true;
         }
-        return true;
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        System.out.println(solution.isSubsequence("abc", "ahbgdc"));
     }
 }
