@@ -64,4 +64,12 @@ public interface Tree {
      * @see com.leetcode.main.interval701.q701.Solution
      */
     void insertIntoBST();
+
+    /**
+     * 二叉搜索树的最近公共祖先
+     * * 递归 如果都大于根从右节点开始找 如果都小于根从左节点开始找
+     *
+     * @see com.leetcode.main.interval201.q235.Solution
+     */
+    void lowestCommonAncestor();
 }
