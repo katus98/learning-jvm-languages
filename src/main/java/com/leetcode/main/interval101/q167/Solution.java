@@ -51,16 +51,16 @@ public class Solution {
      * 双指针: 两侧指针向中间移动, 通过求和比较大小来确定移动哪个指针
      */
     public int[] twoSum3(int[] numbers, int target) {
-        int i1 = 0, i2 = numbers.length - 1;
-        while (i1 < i2) {
-            if (numbers[i1] + numbers[i2] == target) {
+        int i = 0, j = numbers.length - 1;
+        while (i < j) {
+            if (numbers[i] + numbers[j] == target) {
                 break;
-            } else if (numbers[i1] + numbers[i2] > target) {
-                i2--;
+            } else if (numbers[i] + numbers[j] > target) {
+                j--;
             } else {
-                i1++;
+                i++;
             }
         }
-        return new int[]{i1 + 1, i2 + 1};
+        return new int[]{i + 1, j + 1};
     }
 }

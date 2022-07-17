@@ -1,27 +1,29 @@
 package com.leetcode.main.interval801.q876;
 
 /**
+ * 链表的中间结点
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-14
  */
 public class Solution {
+    /**
+     * 快慢指针
+     */
     public ListNode middleNode(ListNode head) {
-        int i = 0;
-        ListNode current = head;
-        while (current != null) {
-            i++;
-            current = current.next;
-        }
-        int index = i / 2 + 1;
-        i = 0;
-        current = head;
-        while (current != null) {
-            if (++i == index) {
+        ListNode dummyHead = new ListNode(-1, head), fast = dummyHead, slow = dummyHead;
+        boolean flag = false;
+        while (fast != null) {
+            fast = fast.next;
+            if (fast != null) {
+                fast = fast.next;
+            } else {
+                flag = true;
                 break;
             }
-            current = current.next;
+            slow = slow.next;
         }
-        return current;
+        return flag ? slow.next : slow;
     }
 
     public static class ListNode {

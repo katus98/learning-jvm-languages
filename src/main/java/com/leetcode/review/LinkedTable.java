@@ -30,4 +30,20 @@ public interface LinkedTable {
      * @see com.leetcode.main.interval1.q23.Solution
      */
     void mergeKLists();
+
+    /**
+     * 链表的中间结点
+     * * 快慢指针
+     *
+     * @see com.leetcode.main.interval801.q876.Solution
+     */
+    void middleNode();
+
+    /**
+     * 环形链表 II
+     * * 数学推导 + 快慢指针
+     *
+     * @see com.leetcode.main.interval101.q142.Solution
+     */
+    void detectCycle();
 }
