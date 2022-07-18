@@ -15,4 +15,13 @@ public interface BitOperation {
      * @see com.leetcode.main.interval201.q201.Solution
      */
     void rangeBitwiseAnd();
+
+    /**
+     * 位 1 的个数
+     * * 循环检查二进制位 1 左移 与 原始值
+     * * 每次去除最后一位1, 统计次数
+     *
+     * @see com.leetcode.main.interval101.q191.Solution
+     */
+    void hammingWeight();
 }
