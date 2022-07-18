@@ -20,4 +20,18 @@ public class Solution {
         }
         return dp[n];
     }
+
+    /**
+     * 翻滚数组
+     */
+    public int fib2(int n) {
+        if (n < 2) return n;
+        int a = 0, b = 1, t = 0;
+        for (int i = 2; i <= n; i++) {
+            t = a + b;
+            a = b;
+            b = t;
+        }
+        return t;
+    }
 }
