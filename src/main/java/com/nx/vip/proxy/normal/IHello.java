@@ -7,5 +7,8 @@ package com.nx.vip.proxy.normal;
  * @version 1.0, 2021-08-09
  */
 public interface IHello {
+
     void hello();
+
+    void outerHello();
 }

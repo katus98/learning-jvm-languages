@@ -11,7 +11,7 @@ import java.lang.reflect.Proxy;
  * @author SUN Katus
  * @version 1.0, 2021-08-09
  */
-public class ProxyMain {
+public class ProxyTest {
     @Test
     void test() {
         IHello hello = new Hello();
@@ -22,5 +22,8 @@ public class ProxyMain {
         // 参数3: 指导所有需要实现的方法如何实现, 通过反射的方式
         IHello iHello = (IHello) Proxy.newProxyInstance(hello.getClass().getClassLoader(), hello.getClass().getInterfaces(), helloHandler);
         iHello.hello();
+        System.out.println("---------------");
+        // 这里需要注意一个事情: 代理方法只有通过代理类显式调用才能生效, 内部调用都不会生效, 而且只有一层, 不会递归
+        iHello.outerHello();
     }
 }

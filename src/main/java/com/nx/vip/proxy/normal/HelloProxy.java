@@ -16,4 +16,11 @@ public class HelloProxy implements IHello {
         hello.hello();
         System.out.println("Sth. After Hello");
     }
+
+    @Override
+    public void outerHello() {
+        System.out.println("Sth. Before outerHello");
+        hello();
+        System.out.println("Sth. After outerHello");
+    }
 }

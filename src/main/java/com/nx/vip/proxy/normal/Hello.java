@@ -11,4 +11,9 @@ public class Hello implements IHello {
     public void hello() {
         System.out.println("Hello: Hello!");
     }
+
+    @Override
+    public void outerHello() {
+        hello();
+    }
 }
