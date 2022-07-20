@@ -1,7 +1,5 @@
 package com.leetcode.main.interval301.q322;
 
-import java.util.Arrays;
-
 /**
  * 零钱兑换
  *
@@ -53,10 +51,10 @@ public class Solution {
      */
     public int coinChange2(int[] coins, int amount) {
         int[] dp = new int[amount + 1];
-        for (int i = 1; i <= amount; i++) {
+        for (int i = 1; i < amount + 1; i++) {
             dp[i] = amount + 1;
             for (int coin : coins) {
-                if (i - coin >= 0 && dp[i - coin] > -1) {
+                if (i - coin >= 0 && dp[i - coin] >= 0) {
                     dp[i] = Math.min(dp[i], dp[i - coin] + 1);
                 }
             }
