@@ -73,4 +73,12 @@ public interface Tree {
      * @see com.leetcode.main.interval201.q235.Solution
      */
     void lowestCommonAncestor();
+
+    /**
+     * 验证二叉搜索树
+     * * 中序遍历并验证顺序
+     *
+     * @see com.leetcode.main.interval1.q98.Solution
+     */
+    void isValidBST();
 }
