@@ -8,6 +8,7 @@ package com.leetcode.main.interval701.q733;
  */
 public class Solution {
     private int m, n;
+    private static final int[][] DIRS = new int[][]{{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
     public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
         this.m = image.length;
@@ -22,17 +23,11 @@ public class Solution {
     private void dfs(int[][] image, int i, int j, int oldColor, int newColor) {
         if (image[i][j] == oldColor) {
             image[i][j] = newColor;
-            if (valid(i - 1, j)) {
-                dfs(image, i - 1, j, oldColor, newColor);
-            }
-            if (valid(i + 1, j)) {
-                dfs(image, i + 1, j, oldColor, newColor);
-            }
-            if (valid(i, j - 1)) {
-                dfs(image, i, j - 1, oldColor, newColor);
-            }
-            if (valid(i, j + 1)) {
-                dfs(image, i, j + 1, oldColor, newColor);
+            for (int[] dir : DIRS) {
+                int x = i + dir[0], y = j + dir[1];
+                if (valid(x, y)) {
+                    dfs(image, x, y, oldColor, newColor);
+                }
             }
         }
     }

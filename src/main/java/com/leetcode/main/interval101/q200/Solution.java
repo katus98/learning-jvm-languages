@@ -9,6 +9,7 @@ package com.leetcode.main.interval101.q200;
  */
 public class Solution {
     private int l1, l2;
+    private static final int[][] DIRS = new int[][]{{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
     public int numIslands(char[][] grid) {
         int count = 0;
@@ -28,17 +29,12 @@ public class Solution {
 
     private void sink(char[][] grid, int i, int j) {
         grid[i][j] = '0';
-        if (isValid(i - 1, j) && grid[i - 1][j] == '1') {
-            sink(grid, i - 1, j);
-        }
-        if (isValid(i + 1, j) && grid[i + 1][j] == '1') {
-            sink(grid, i + 1, j);
-        }
-        if (isValid(i, j - 1) && grid[i][j - 1] == '1') {
-            sink(grid, i, j - 1);
-        }
-        if (isValid(i, j + 1) && grid[i][j + 1] == '1') {
-            sink(grid, i, j + 1);
+        for (int[] dir : DIRS) {
+            int ni = i + dir[0];
+            int nj = j + dir[1];
+            if (isValid(ni, nj) && grid[ni][nj] == '1') {
+                sink(grid, ni, nj);
+            }
         }
     }
 
