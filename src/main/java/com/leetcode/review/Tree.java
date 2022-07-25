@@ -81,4 +81,12 @@ public interface Tree {
      * @see com.leetcode.main.interval1.q98.Solution
      */
     void isValidBST();
+
+    /**
+     * 二叉搜索树中第K小的元素
+     * * 中序遍历提前返回
+     *
+     * @see com.leetcode.main.interval201.q230.Solution
+     */
+    void kthSmallest();
 }
