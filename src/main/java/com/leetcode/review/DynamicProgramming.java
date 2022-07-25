@@ -411,4 +411,12 @@ public interface DynamicProgramming {
      * @see com.leetcode.main.interval401.q416.Solution
      */
     void canPartition();
+
+    /**
+     * 交错字符串
+     * * DP 表示s1前i个字符与s2前j个字符能否交错构成s3前i + j个字符
+     * * 可以将左右字符串最后一位是否与当前组合字符串相等来判断状态是否可以转移
+     * * d2DP: dp[i][j] = (dp[i][j - 1] && s2.charAt(j - 1) == s3.charAt(k)) || (dp[i - 1][j] && s1.charAt(i - 1) == s3.charAt(k))
+     */
+    void isInterleave();
 }
