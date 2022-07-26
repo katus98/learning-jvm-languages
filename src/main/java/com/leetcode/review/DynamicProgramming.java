@@ -417,6 +417,16 @@ public interface DynamicProgramming {
      * * DP 表示s1前i个字符与s2前j个字符能否交错构成s3前i + j个字符
      * * 可以将左右字符串最后一位是否与当前组合字符串相等来判断状态是否可以转移
      * * d2DP: dp[i][j] = (dp[i][j - 1] && s2.charAt(j - 1) == s3.charAt(k)) || (dp[i - 1][j] && s1.charAt(i - 1) == s3.charAt(k))
+     *
+     * @see com.leetcode.main.interval1.q97.Solution
      */
     void isInterleave();
+
+    /**
+     * 监控二叉树
+     * * DP 递归式DP
+     *
+     * @see com.leetcode.main.interval901.q968.Solution
+     */
+    void minCameraCover();
 }
