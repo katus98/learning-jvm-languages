@@ -12,18 +12,14 @@ public class Solution {
      */
     public ListNode middleNode(ListNode head) {
         ListNode dummyHead = new ListNode(-1, head), fast = dummyHead, slow = dummyHead;
-        boolean flag = false;
         while (fast != null) {
+            slow = slow.next;
             fast = fast.next;
             if (fast != null) {
                 fast = fast.next;
-            } else {
-                flag = true;
-                break;
             }
-            slow = slow.next;
         }
-        return flag ? slow.next : slow;
+        return slow;
     }
 
     public static class ListNode {
