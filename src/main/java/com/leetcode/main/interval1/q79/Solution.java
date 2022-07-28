@@ -9,8 +9,10 @@ package com.leetcode.main.interval1.q79;
 public class Solution {
     private int m, n;
     private boolean[][] visited;
+    private static final int[][] DIRS = new int[][]{{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
     public boolean exist(char[][] board, String word) {
+        if (word.isEmpty()) return true;
         this.m = board.length;
         this.n = m > 0 ? board[0].length : 0;
         this.visited = new boolean[m][n];
@@ -24,23 +26,22 @@ public class Solution {
         return false;
     }
 
+    /**
+     * 回溯 visited
+     */
     private boolean find(char[][] board, int i, int j, String word, int c) {
-        char ch = word.charAt(c);
-        if (ch != board[i][j]) return false;
-        else if (c >= word.length() - 1) {
-            return true;
+        if (word.charAt(c) == board[i][j]) {
+            visited[i][j] = true;
+            if (c == word.length() - 1) return true;
+            for (int[] dir : DIRS) {
+                int ni = i + dir[0];
+                int nj = j + dir[1];
+                if (valid(ni, nj) && !visited[ni][nj] && find(board, ni, nj, word, c + 1)) {
+                    return true;
+                }
+            }
+            visited[i][j] = false;
         }
-        visited[i][j] = true;
-        if (valid(i - 1, j) && !visited[i - 1][j] && find(board, i - 1, j, word, c + 1)) {
-            return true;
-        } else if (valid(i + 1, j) && !visited[i + 1][j] && find(board, i + 1, j, word, c + 1)) {
-            return true;
-        } else if (valid(i, j - 1) && !visited[i][j - 1] && find(board, i, j - 1, word, c + 1)) {
-            return true;
-        } else if (valid(i, j + 1) && !visited[i][j + 1] && find(board, i, j + 1, word, c + 1)) {
-            return true;
-        }
-        visited[i][j] = false;
         return false;
     }
 
