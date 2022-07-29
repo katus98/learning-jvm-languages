@@ -429,4 +429,14 @@ public interface DynamicProgramming {
      * @see com.leetcode.main.interval901.q968.Solution
      */
     void minCameraCover();
+
+    /**
+     * 最长回文子串
+     * * DP 标识从i到j位置的字符串是否是回文的
+     * * d2DP: dp[i][j] = dp[i + 1][j - 1] (s[i] == s[j]) 长度不大于2时直接为true
+     * * d2DP: dp[i][j] = false (s[i] != s[j])
+     *
+     * @see com.leetcode.main.interval1.q5.Solution
+     */
+    void longestPalindrome();
 }
