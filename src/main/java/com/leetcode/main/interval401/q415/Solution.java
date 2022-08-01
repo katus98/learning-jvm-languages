@@ -9,26 +9,26 @@ package com.leetcode.main.interval401.q415;
 public class Solution {
     public String addStrings(String num1, String num2) {
         StringBuilder builder = new StringBuilder();
-        char front = '\0', ch1, ch2, ch;
+        char ch1, ch2, front = '\0';
         for (int i = 0; i < Math.max(num1.length(), num2.length()); i++) {
             if (i < num1.length()) {
-                ch1 = num1.charAt(num1.length() - i - 1);
+                ch1 = num1.charAt(num1.length() - 1 - i);
             } else {
                 ch1 = '0';
             }
             if (i < num2.length()) {
-                ch2 = num2.charAt(num2.length() - i - 1);
+                ch2 = num2.charAt(num2.length() - 1 - i);
             } else {
                 ch2 = '0';
             }
-            ch = (char) (ch1 - '0' + ch2 + front);
-            if (ch > '9') {
-                ch = (char) (ch - 10);
+            char res = (char) (ch1 + ch2 - '0' + front);
+            if (res > '9') {
+                res -= 10;
                 front = '\1';
             } else {
                 front = '\0';
             }
-            builder.insert(0, ch);
+            builder.insert(0, res);
         }
         if (front == '\1') {
             builder.insert(0, '1');

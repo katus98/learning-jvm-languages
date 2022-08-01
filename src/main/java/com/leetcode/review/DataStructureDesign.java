@@ -13,4 +13,11 @@ public interface DataStructureDesign {
      * @see com.leetcode.main.interval201.q232.MyQueue
      */
     void stackToQueue();
+
+    /**
+     * 设计哈希映射
+     *
+     * @see com.leetcode.main.interval701.q706.MyHashMap
+     */
+    void hashMap();
 }

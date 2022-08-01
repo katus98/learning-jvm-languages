@@ -5,7 +5,6 @@ import java.util.List;
 
 /**
  * 螺旋矩阵
- * 没有特别的解法, 耐心写完最外层的遍历然后递归即可
  *
  * @author SUN Katus
  * @version 1.0, 2022-03-12
@@ -22,6 +21,10 @@ public class Solution {
         return list;
     }
 
+    /**
+     * 顺时针遍历最外层, 内层递归
+     * 需要额外处理只有一行或者只有一列的情况
+     */
     private void make(int[][] matrix, int i, int m1, int m2, int n1, int n2) {
         if (m1 <= m2 && n1 <= n2) {
             // 最上面从左到右遍历

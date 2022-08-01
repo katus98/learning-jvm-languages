@@ -24,4 +24,12 @@ public interface BitOperation {
      * @see com.leetcode.main.interval101.q191.Solution
      */
     void hammingWeight();
+
+    /**
+     * 只出现一次的数字
+     * * 所有的数异或运算, 相同的数两两消除, 剩下唯一的数
+     *
+     * @see com.leetcode.main.interval101.q136.Solution
+     */
+    void singleNumber();
 }
