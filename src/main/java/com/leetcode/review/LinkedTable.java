@@ -46,4 +46,21 @@ public interface LinkedTable {
      * @see com.leetcode.main.interval101.q142.Solution
      */
     void detectCycle();
+
+    /**
+     * 删除链表的倒数第 N 个结点
+     * * 先向后走n步, 然后设置一个新的指针和之前的同步走, 直到先走的指针走到最后, 后走的指针就是倒数第n
+     *
+     * @see com.leetcode.main.interval1.q19.Solution
+     */
+    void removeNthFromEnd();
+
+    /**
+     * 回文链表
+     * * 遍历链表将数值放入数组中, 然后首位双指针判断回文
+     * * 链表通过快慢指针分成前后两部分, 后部分反转, 然后依次比较元素
+     *
+     * @see com.leetcode.main.interval201.q234.Solution
+     */
+    void isPalindrome();
 }

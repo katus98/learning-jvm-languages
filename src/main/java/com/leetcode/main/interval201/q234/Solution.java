@@ -29,6 +29,39 @@ public class Solution {
         return true;
     }
 
+    /**
+     * 链表通过快慢指针分成前后两部分, 后部分反转, 然后依次比较元素
+     */
+    public boolean isPalindrome2(ListNode head) {
+        ListNode fast = head, slow = head;
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+            if (fast != null) {
+                fast = fast.next;
+            }
+        }
+        ListNode head2 = reserve(slow);
+        ListNode cur1 = head, cur2 = head2;
+        while (cur1 != null && cur2 != null) {
+            if (cur1.val != cur2.val) return false;
+            cur1 = cur1.next;
+            cur2 = cur2.next;
+        }
+        return true;
+    }
+
+    private ListNode reserve(ListNode head) {
+        ListNode prev = null, cur = head, nex;
+        while (cur != prev) {
+            nex = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = nex;
+        }
+        return prev;
+    }
+
     public static class ListNode {
         int val;
         ListNode next;
