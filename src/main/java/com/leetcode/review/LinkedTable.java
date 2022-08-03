@@ -63,4 +63,20 @@ public interface LinkedTable {
      * @see com.leetcode.main.interval201.q234.Solution
      */
     void isPalindrome();
+
+    /**
+     * 奇偶链表
+     * * 维护两个头, 交替与两个头连接
+     *
+     * @see com.leetcode.main.interval301.q328.Solution
+     */
+    void oddEvenList();
+
+    /**
+     * 排序链表
+     * * 归并排序
+     *
+     * @see com.leetcode.main.interval101.q148.Solution
+     */
+    void sortList();
 }

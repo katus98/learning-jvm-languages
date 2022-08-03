@@ -22,4 +22,13 @@ public interface GreedyAlgorithm {
      * @see com.leetcode.main.interval1.q45.Solution
      */
     void canJump2();
+
+    /**
+     * 无重叠区间
+     * * 逆向思维: 寻找不重叠的区间序列最大个数
+     * * 贪心: 维护一个当前最左侧区间的右边界, 如果不重叠就更新最左侧区间
+     *
+     * @see com.leetcode.main.interval401.q435.Solution
+     */
+    void eraseOverlapIntervals();
 }

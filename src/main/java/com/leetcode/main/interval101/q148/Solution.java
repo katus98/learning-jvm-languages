@@ -46,7 +46,7 @@ public class Solution {
         if (head == null) return null;
         // 快慢指针确定链表中点
         if (head.next != tail) {
-            ListNode fast = head, slow = head;
+            ListNode slow = head, fast = head;
             while (fast != tail) {
                 slow = slow.next;
                 fast = fast.next;
@@ -54,9 +54,8 @@ public class Solution {
                     fast = fast.next;
                 }
             }
-            ListNode mid = slow;
-            ListNode list1 = mergeSort(head, mid);
-            ListNode list2 = mergeSort(mid, tail);
+            ListNode list1 = mergeSort(head, slow);
+            ListNode list2 = mergeSort(slow, tail);
             return mergeList(list1, list2);
         } else {
             // 切记需要断开链表
