@@ -31,4 +31,12 @@ public interface GreedyAlgorithm {
      * @see com.leetcode.main.interval401.q435.Solution
      */
     void eraseOverlapIntervals();
+
+    /**
+     * 递增的三元子序列
+     * * 前后缀最值
+     *
+     * @see com.leetcode.main.interval301.q334.Solution
+     */
+    void increasingTriplet();
 }
