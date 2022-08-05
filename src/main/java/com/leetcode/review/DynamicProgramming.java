@@ -115,6 +115,16 @@ public interface DynamicProgramming {
     void longestCommonSubsequence();
 
     /**
+     * 不相交的线
+     * * dp[i][j] 数组1前i项和数组2前j项形成的最大不相交线数量
+     * * d2DP: dp[i][j] = dp[i - 1][j - 1] + 1 (num1[i - 1] == num2[j - 1])
+     * * d2DP: dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]) (num1[i - 1] != num2[j - 1])
+     *
+     * @see com.leetcode.main.interval1001.q1035.Solution
+     */
+    void maxUncrossedLines();
+
+    /**
      * 两个字符串的删除操作
      * * dp[i][j] 字符串1前i项和字符串2前j项形成同样字符串需要删除的操作数
      * * d2DP: dp[i][j] = dp[i - 1][j - 1] (text1.charAt(i - 1) == text2.charAt(j - 1))

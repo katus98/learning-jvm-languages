@@ -89,4 +89,12 @@ public interface Tree {
      * @see com.leetcode.main.interval201.q230.Solution
      */
     void kthSmallest();
+
+    /**
+     * 平衡二叉树
+     * * 递归返回高度, 如果不合法返回-1
+     *
+     * @see com.leetcode.main.interval101.q110.Solution
+     */
+    void isBalanced();
 }

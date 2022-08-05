@@ -3,6 +3,8 @@ package com.leetcode.main.interval101.q110;
 import com.leetcode.offer.q55.Solution2;
 
 /**
+ * 平衡二叉树
+ *
  * @author SUN Katus
  * @version 1.0, 2022-03-19
  * @see Solution2
