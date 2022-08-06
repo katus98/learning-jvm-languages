@@ -39,4 +39,12 @@ public interface GreedyAlgorithm {
      * @see com.leetcode.main.interval301.q334.Solution
      */
     void increasingTriplet();
+
+    /**
+     * 划分字母区间
+     * * 贪心记录每个字符出现的最后一个位置
+     *
+     * @see com.leetcode.main.interval701.q763.Solution
+     */
+    void partitionLabels();
 }

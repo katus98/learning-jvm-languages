@@ -51,6 +51,14 @@ public interface Tree {
     void hasPathSum();
 
     /**
+     * 路径总和 III
+     * * 双层递归, 外层遍历每个节点, 内层遍历以当前节点作为根的每条路径
+     *
+     * @see com.leetcode.main.interval401.q437.Solution
+     */
+    void pathSum();
+
+    /**
      * 二叉搜索树中的搜索
      * * 递归 根据大小判断子节点选择
      *
@@ -97,4 +105,12 @@ public interface Tree {
      * @see com.leetcode.main.interval101.q110.Solution
      */
     void isBalanced();
+
+    /**
+     * 二叉树的直径
+     * * 递归计算左右节点的深度, 计算过程中更新结果
+     *
+     * @see com.leetcode.main.interval501.q543.Solution
+     */
+    void diameterOfBinaryTree();
 }
