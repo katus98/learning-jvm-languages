@@ -8,13 +8,14 @@ package com.leetcode.review;
  */
 public interface Tree {
     /**
-     * 树的遍历
+     * 树的遍历 (递归/迭代)
      *
      * @see com.leetcode.main.interval101.q144.Solution
      * @see com.leetcode.main.interval1.q94.Solution
      * @see com.leetcode.main.interval101.q145.Solution
      * @see com.leetcode.main.interval101.q102.Solution
      * @see com.leetcode.main.interval501.q589.Solution
+     * @see com.leetcode.main.interval101.q173.BSTIterator
      */
     void traversal();
 
@@ -113,4 +114,12 @@ public interface Tree {
      * @see com.leetcode.main.interval501.q543.Solution
      */
     void diameterOfBinaryTree();
+
+    /**
+     * 将有序数组转换为二叉搜索树
+     * * 反向中序遍历 + 二分
+     *
+     * @see com.leetcode.main.interval101.q108.Solution
+     */
+    void sortedArrayToBST();
 }
