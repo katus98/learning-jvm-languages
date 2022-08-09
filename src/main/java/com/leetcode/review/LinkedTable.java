@@ -79,4 +79,12 @@ public interface LinkedTable {
      * @see com.leetcode.main.interval101.q148.Solution
      */
     void sortList();
+
+    /**
+     * 两数相加
+     * * 逐位相加, 注意进位
+     *
+     * @see com.leetcode.main.interval1.q2.Solution
+     */
+    void addTwoNumbers();
 }

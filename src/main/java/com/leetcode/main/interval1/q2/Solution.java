@@ -9,34 +9,31 @@ package com.leetcode.main.interval1.q2;
 public class Solution {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode list = new ListNode();
-        ListNode current = list;
-        Boolean flag = false;
-        while (true) {
+        ListNode dummyHead = new ListNode(-1), before = dummyHead;
+        int res;
+        boolean flag = false;
+        while (l1 != null || l2 != null || flag) {
+            res = 0;
             if (l1 != null) {
-                current.val += l1.val;
+                res += l1.val;
                 l1 = l1.next;
             }
             if (l2 != null) {
-                current.val += l2.val;
+                res += l2.val;
                 l2 = l2.next;
             }
             if (flag) {
-                current.val += 1;
+                res++;
                 flag = false;
             }
-            if (current.val >= 10) {
-                current.val -= 10;
+            if (res >= 10) {
+                res -= 10;
                 flag = true;
             }
-            if (l1 != null || l2 != null || flag) {
-                current.next = new ListNode();
-                current = current.next;
-            } else {
-                break;
-            }
+            before.next = new ListNode(res);
+            before = before.next;
         }
-        return list;
+        return dummyHead.next;
     }
 
     public static class ListNode {

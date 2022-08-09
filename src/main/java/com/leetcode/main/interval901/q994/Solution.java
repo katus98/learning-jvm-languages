@@ -32,6 +32,7 @@ public class Solution {
             }
         }
         if (!needProcess) return 0;
+        // 初始值是-1
         int count = -1;
         while (!queue.isEmpty()) {
             for (int k = queue.size(); k > 0; k--) {

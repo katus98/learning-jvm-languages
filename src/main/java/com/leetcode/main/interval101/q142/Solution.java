@@ -12,21 +12,22 @@ public class Solution {
      * 当快慢指针相遇之后, 从相遇点和链表头同时同速向后遍历, 必然会在入环点相遇
      */
     public ListNode detectCycle(ListNode head) {
-        if (head == null) return null;
-        ListNode fast = head, slow = head, ptr = head;
+        ListNode fast = head, slow = head;
         while (fast != null) {
+            fast = fast.next;
             slow = slow.next;
-            if (fast.next != null) {
-                fast = fast.next.next;
+            if (fast != null) {
+                fast = fast.next;
             } else {
-                return null;
+                break;
             }
             if (fast == slow) {
-                while (slow != ptr) {
+                fast = head;
+                while (fast != slow) {
+                    fast = fast.next;
                     slow = slow.next;
-                    ptr = ptr.next;
                 }
-                return ptr;
+                return slow;
             }
         }
         return null;
