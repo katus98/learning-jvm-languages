@@ -50,7 +50,7 @@ public class Solution {
         visited[node] = 2;
     }
 
-    private int[] indeg;
+    private int[] inDegrees;
 
     /**
      * 广度优先搜索
@@ -60,14 +60,14 @@ public class Solution {
         for (int i = 0; i < numCourses; ++i) {
             edges.put(i, new ArrayList<>());
         }
-        this.indeg = new int[numCourses];
+        this.inDegrees = new int[numCourses];
         for (int[] prerequisite : prerequisites) {
             edges.get(prerequisite[1]).add(prerequisite[0]);
-            ++indeg[prerequisite[0]];
+            ++inDegrees[prerequisite[0]];
         }
         Queue<Integer> queue = new LinkedList<>();
         for (int i = 0; i < numCourses; ++i) {
-            if (indeg[i] == 0) {
+            if (inDegrees[i] == 0) {
                 queue.offer(i);
             }
         }
@@ -76,8 +76,8 @@ public class Solution {
             ++visited;
             int node = queue.poll();
             for (int childNode : edges.get(node)) {
-                --indeg[childNode];
-                if (indeg[childNode] == 0) {
+                --inDegrees[childNode];
+                if (inDegrees[childNode] == 0) {
                     queue.offer(childNode);
                 }
             }

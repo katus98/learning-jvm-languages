@@ -87,4 +87,19 @@ public interface LinkedTable {
      * @see com.leetcode.main.interval1.q2.Solution
      */
     void addTwoNumbers();
+
+    /**
+     * 相交链表
+     * * 统计链表长度, 向后对齐, 然后同时遍历节点
+     *
+     * @see com.leetcode.main.interval101.q160.Solution
+     */
+    void getIntersectionNode();
+
+    /**
+     * 删除排序链表中的重复元素 II
+     *
+     * @see com.leetcode.main.interval1.q82.Solution
+     */
+    void deleteDuplicates();
 }

@@ -22,4 +22,28 @@ public interface Graph {
      * @see com.leetcode.main.interval1001.q1042.Solution
      */
     void gardenNoAdj();
+
+    /**
+     * 课程表
+     * * 拓扑排序
+     *
+     * @see com.leetcode.main.interval201.q207.Solution
+     */
+    void canFinish();
+
+    /**
+     * 课程表 II
+     * * 拓扑排序
+     *
+     * @see com.leetcode.main.interval201.q210.Solution
+     */
+    void findOrder();
+
+    /**
+     * 公交路线
+     * * 构建线路网络 + BFS
+     *
+     * @see com.leetcode.main.interval801.q815.Solution
+     */
+    void numBusesToDestination();
 }

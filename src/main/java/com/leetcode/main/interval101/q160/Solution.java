@@ -8,7 +8,6 @@ package com.leetcode.main.interval101.q160;
  * @see com.leetcode.offer.q52.Solution
  */
 public class Solution {
-
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         int countA = 0, countB = 0;
         ListNode cA = headA, cB = headB;
@@ -33,9 +32,7 @@ public class Solution {
             }
         }
         while (cA != null && cB != null) {
-            if (cA == cB) {
-                return cA;
-            }
+            if (cA == cB) return cA;
             cA = cA.next;
             cB = cB.next;
         }
