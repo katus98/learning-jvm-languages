@@ -102,4 +102,12 @@ public interface LinkedTable {
      * @see com.leetcode.main.interval1.q82.Solution
      */
     void deleteDuplicates();
+
+    /**
+     * 两两交换链表中的节点
+     * * 伪头节点 + 两两遍历
+     *
+     * @see com.leetcode.main.interval1.q24.Solution
+     */
+    void swapPairs();
 }

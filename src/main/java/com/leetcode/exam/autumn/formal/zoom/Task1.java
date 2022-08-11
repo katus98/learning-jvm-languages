@@ -60,7 +60,7 @@ public class Task1 {
         Scanner scanner = new Scanner(System.in);
         int n = Integer.parseInt(scanner.nextLine());
         String colors = scanner.nextLine();
-        List<Integer>[] graph = new List<>[n + 1];
+        List<Integer>[] graph = new List[n + 1];
         for (int i = 0; i < n + 1; i++) {
             graph[i] = new ArrayList<>();
         }
@@ -107,7 +107,7 @@ public class Task1 {
         Scanner scanner = new Scanner(System.in);
         int n = Integer.parseInt(scanner.nextLine());
         char[] colors = scanner.nextLine().toCharArray();
-        List<Integer>[] graph = new List<>[n];
+        List<Integer>[] graph = new List[n];
         for (int i = 0; i < n; i++) {
             graph[i] = new ArrayList<>();
         }

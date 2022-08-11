@@ -20,4 +20,11 @@ public interface DataStructureDesign {
      * @see com.leetcode.main.interval701.q706.MyHashMap
      */
     void hashMap();
+
+    /**
+     * 设计链表
+     *
+     * @see com.leetcode.main.interval701.q707.MyLinkedList
+     */
+    void myLinkedList();
 }
