@@ -35,6 +35,7 @@ public class Solution {
         lastTail.next = current;
         return dummyHead.next;
     }
+
     /**
      * 常数个额外空间
      */
@@ -52,26 +53,24 @@ public class Solution {
             for (int j = 0; j < k - 1; j++) {
                 tempTail = tempTail.next;
             }
-            // 额外记录下一个
-            current = tempTail.next;
             ListNode[] nodes = reverse(tempHead, tempTail);
             lastTail.next = nodes[0];
             lastTail = nodes[1];
-            tempHead = current;
+            tempHead = lastTail.next;
         }
-        lastTail.next = current;
         return dummyHead.next;
     }
+
     /**
      * 反转链表: 前中后三个指针, 先记录后续的, 再将当前指针指向前, 然后向后移动一位
      */
     private ListNode[] reverse(ListNode head, ListNode tail) {
-        ListNode pre = tail.next, curr = head, nex;
+        ListNode cur = head, pre = tail.next, nex;
         while (pre != tail) {
-            nex = curr.next;
-            curr.next = pre;
-            pre = curr;
-            curr = nex;
+            nex = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = nex;
         }
         return new ListNode[]{tail, head};
     }

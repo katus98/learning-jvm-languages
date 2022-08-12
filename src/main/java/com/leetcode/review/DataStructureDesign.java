@@ -27,4 +27,12 @@ public interface DataStructureDesign {
      * @see com.leetcode.main.interval701.q707.MyLinkedList
      */
     void myLinkedList();
+
+    /**
+     * O(1) 时间插入、删除和获取随机元素
+     * * 哈希表记录元素在数组中的位置, 数组记录数据用来生成随机元素, 删除时将最后的元素放到需要删除的位置并更新位置信息
+     *
+     * @see com.leetcode.main.interval301.q380.RandomizedSet
+     */
+    void randomizedSet();
 }

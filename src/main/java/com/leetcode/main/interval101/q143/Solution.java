@@ -7,48 +7,43 @@ package com.leetcode.main.interval101.q143;
  * @version 1.0, 2022-04-14
  */
 public class Solution {
+    /**
+     * 二分链表, 反转后半部分, 交替合并
+     */
     public void reorderList(ListNode head) {
-        ListNode dummyHead = new ListNode(-1, head), current = head, secondHead;
-        // 统计链表长度
-        int count = 0;
-        while (current != null) {
-            current = current.next;
-            count++;
-        }
-        // 计算分界点
-        int size = count;
-        int first = size - size / 2;
-        // 将前后链表拆分
-        count = 0;
-        current = dummyHead;
-        while (count++ != first) {
-            current = current.next;
-        }
-        secondHead = current.next;
-        current.next = null;
-        // 将后面的链表反转
-        current = secondHead;
-        ListNode pre = null, nex;
-        while (current != null) {
-            nex = current.next;
-            current.next = pre;
-            pre = current;
-            current = nex;
-        }
-        secondHead = pre;
-        // 两个链表交替合并成新链表
-        current = dummyHead;
-        ListNode current1 = head, current2 = secondHead;
-        while (current1 != null) {
-            current.next = current1;
-            current1 = current1.next;
-            current = current.next;
-            if (current2 != null) {
-                current.next = current2;
-                current2 = current2.next;
-                current = current.next;
+        ListNode fast = head, dummyHead = new ListNode(-1, head), slow = dummyHead;
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+            if (fast != null) {
+                fast = fast.next;
             }
         }
+        ListNode list2 = slow.next;
+        slow.next = null;
+        list2 = reverse(list2);
+        ListNode node1 = head, node2 = list2, before = dummyHead;
+        while (node1 != null) {
+            before.next = node1;
+            node1 = node1.next;
+            before = before.next;
+            if (node2 != null) {
+                before.next = node2;
+                node2 = node2.next;
+                before = before.next;
+            }
+        }
+    }
+
+    private ListNode reverse(ListNode head) {
+        ListNode pre = null, cur = head, nex;
+        while (cur != null) {
+            nex = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = nex;
+        }
+        return pre;
     }
 
     public static class ListNode {

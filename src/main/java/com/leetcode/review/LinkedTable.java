@@ -110,4 +110,12 @@ public interface LinkedTable {
      * @see com.leetcode.main.interval1.q24.Solution
      */
     void swapPairs();
+
+    /**
+     * 重排链表
+     * * 二分链表, 反转后半部分, 交替合并
+     *
+     * @see com.leetcode.main.interval101.q143.Solution
+     */
+    void reorderList();
 }

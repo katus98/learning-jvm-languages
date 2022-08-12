@@ -414,7 +414,7 @@ public interface DynamicProgramming {
 
     /**
      * 分割等和子集
-     * * DP 表示前i个元素选元素是否可以和等于j
+     * * DP 表示前i个元素(索引号)选元素是否可以和等于j
      * * d2DP: dp[i][j] = dp[i - 1][j - nums[i]] | dp[i - 1][j] (j >= nums[i])
      * * d2DP: dp[i][j] = dp[i - 1][j] (j < nums[i])
      *

@@ -8,7 +8,7 @@ package com.leetcode.main.interval401.q416;
  */
 public class Solution {
     /**
-     * DP 表示前i个元素选元素是否可以和等于j
+     * DP 表示前i个元素(索引号)选元素是否可以和等于j
      * dp[i][j] = dp[i - 1][j - nums[i]] | dp[i - 1][j] (j >= nums[i])
      * dp[i][j] = dp[i - 1][j] (j < nums[i])
      */
@@ -28,14 +28,20 @@ public class Solution {
         }
         dp[0][nums[0]] = true;
         for (int i = 1; i < nums.length; i++) {
-            for (int j = 0; j < target + 1; j++) {
+            for (int j = 1; j <= target; j++) {
                 if (j >= nums[i]) {
-                    dp[i][j] = dp[i - 1][j - nums[i]] | dp[i - 1][j];
+                    // 如果选取了num[i]则需要考虑前i-1项的情况, 否则会重复选择num[i]
+                    dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i]];
                 } else {
                     dp[i][j] = dp[i - 1][j];
                 }
             }
         }
         return dp[nums.length - 1][target];
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        System.out.println(solution.canPartition(new int[]{2, 2, 3, 5}));
     }
 }
