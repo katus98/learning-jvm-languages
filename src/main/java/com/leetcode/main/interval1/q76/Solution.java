@@ -19,9 +19,10 @@ public class Solution {
         LinkedHashMap<Character, CharCount> map = new LinkedHashMap<>();
         for (int i = 0; i < t.length(); i++) {
             char ch = t.charAt(i);
-            CharCount charCount = map.getOrDefault(ch, new CharCount(0, 0));
-            charCount.require += 1;
-            map.put(ch, charCount);
+            if (!map.containsKey(ch)) {
+                map.put(ch, new CharCount(0, 0));
+            }
+            map.get(ch).require++;
         }
         int i = 0, j = 0;
         while (j < s.length()) {

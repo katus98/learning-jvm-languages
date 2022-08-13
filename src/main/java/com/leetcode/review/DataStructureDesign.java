@@ -35,4 +35,12 @@ public interface DataStructureDesign {
      * @see com.leetcode.main.interval301.q380.RandomizedSet
      */
     void randomizedSet();
+
+    /**
+     * 最小栈
+     * * 通过一个额外的栈, 每次发现有最小值就压入, 每次弹出就查看是否与栈顶一致
+     *
+     * @see com.leetcode.main.interval101.q155.MinStack
+     */
+    void minStack();
 }
