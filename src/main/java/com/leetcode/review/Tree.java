@@ -122,4 +122,37 @@ public interface Tree {
      * @see com.leetcode.main.interval101.q108.Solution
      */
     void sortedArrayToBST();
+
+    /**
+     * 相同的树
+     * * 递归
+     *
+     * @see com.leetcode.main.interval1.q100.Solution
+     */
+    void isSameTree();
+
+    /**
+     * 从前序与中序遍历序列构造二叉树
+     * * 递归
+     *
+     * @see com.leetcode.main.interval101.q105.Solution
+     */
+    void buildTree();
+
+    /**
+     * 二叉树的锯齿形层序遍历
+     * * 遍历本身是普通的层序遍历, 但是放入结果方向会根据层次的奇偶变化(双端队列)
+     *
+     * @see com.leetcode.main.interval101.q103.Solution
+     */
+    void zigzagLevelOrder();
+
+    /**
+     * 二叉树的右视图
+     * * 层序遍历, 每次循环都遍历一层, 记录当前层的最右侧节点值
+     * * 深度优先遍历(根->右->左), 遍历结果最前面的几个就是(有几层就有几个)
+     *
+     * @see com.leetcode.main.interval101.q199.Solution
+     */
+    void rightSideView();
 }

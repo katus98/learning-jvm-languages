@@ -8,7 +8,6 @@ package com.leetcode.main.interval101.q101;
  * @see com.leetcode.offer.q28.Solution
  */
 public class Solution {
-
     public boolean isSymmetric(TreeNode root) {
         if (root == null) return true;
         return check(root.left, root.right);

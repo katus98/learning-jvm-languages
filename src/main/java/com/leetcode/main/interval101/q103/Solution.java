@@ -12,6 +12,9 @@ import java.util.Queue;
  * @version 1.0, 2022-04-04
  */
 public class Solution {
+    /**
+     * 遍历本身是普通的层序遍历, 但是放入结果方向会根据层次的奇偶变化(双端队列)
+     */
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> list = new ArrayList<>();
         if (root == null) return list;
