@@ -43,4 +43,12 @@ public interface DataStructureDesign {
      * @see com.leetcode.main.interval101.q155.MinStack
      */
     void minStack();
+
+    /**
+     * 实现 Trie (前缀树)
+     * * 每个节点有26个子节点和当前是否结束的标识
+     *
+     * @see com.leetcode.main.interval201.q208.Trie
+     */
+    void trie();
 }

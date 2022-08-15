@@ -52,12 +52,20 @@ public interface Tree {
     void hasPathSum();
 
     /**
+     * 路径总和 II
+     * * 回溯
+     *
+     * @see com.leetcode.main.interval101.q113.Solution
+     */
+    void pathSum2();
+
+    /**
      * 路径总和 III
      * * 双层递归, 外层遍历每个节点, 内层遍历以当前节点作为根的每条路径
      *
      * @see com.leetcode.main.interval401.q437.Solution
      */
-    void pathSum();
+    void pathSum3();
 
     /**
      * 二叉搜索树中的搜索
@@ -155,4 +163,12 @@ public interface Tree {
      * @see com.leetcode.main.interval101.q199.Solution
      */
     void rightSideView();
+
+    /**
+     * 删除二叉搜索树中的节点
+     * * 模拟 + 递归
+     *
+     * @see com.leetcode.main.interval401.q450.Solution
+     */
+    void deleteNode();
 }

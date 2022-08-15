@@ -7,7 +7,7 @@ package com.leetcode.main.interval201.q208;
  * @version 1.0, 2022-06-20
  */
 public class Trie {
-    private TrieNode root;
+    private final TrieNode root;
 
     public Trie() {
         this.root = new TrieNode();
