@@ -171,4 +171,13 @@ public interface Tree {
      * @see com.leetcode.main.interval401.q450.Solution
      */
     void deleteNode();
+
+    /**
+     * 二叉树的序列化与反序列化
+     * * 遍历, 但是包含一层null
+     *
+     * @see com.leetcode.main.interval201.q297.Codec
+     * @see com.leetcode.offer.q37.Codec
+     */
+    void codec();
 }

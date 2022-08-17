@@ -40,4 +40,41 @@ public class Solution {
         }
         return res;
     }
+
+    public int[] asteroidCollision2(int[] asteroids) {
+        Deque<Integer> deque = new LinkedList<>();
+        boolean exist;
+        // 从左向右遍历
+        for (int asteroid : asteroids) {
+            exist = true;
+            // 只有右边向左运动的行星才有可能碰撞
+            if (asteroid < 0) {
+                // 如果前一个行星是向右移动的
+                while (!deque.isEmpty() && deque.peekLast() > 0) {
+                    if (deque.peekLast() > -asteroid) {
+                        // 如果向右的大于向左的 则新加入的爆炸不存在了
+                        exist = false;
+                        break;
+                    } else if (deque.peekLast() == -asteroid) {
+                        // 如果向右的等于向左的 则两者都爆炸不存在了
+                        exist = false;
+                        deque.pollLast();
+                        break;
+                    } else {
+                        // 如果向右的小于向左的 则向左的爆炸不存在了
+                        // 继续循环
+                        deque.pollLast();
+                    }
+                }
+            }
+            if (exist) {
+                deque.addLast(asteroid);
+            }
+        }
+        int[] res = new int[deque.size()];
+        for (int i = 0; i < res.length; i++) {
+            res[i] = deque.pollFirst();
+        }
+        return res;
+    }
 }

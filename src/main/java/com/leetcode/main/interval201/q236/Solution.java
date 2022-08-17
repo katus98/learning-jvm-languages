@@ -45,11 +45,10 @@ public class Solution {
         if (root == null) return false;
         boolean son1 = dfs(root.left, p, q);
         boolean son2 = dfs(root.right, p, q);
-        // 最近祖先只有两种情况, 一种是左右子节点各含有一个, 一种是任意子节点含有一个根节点本身是另一个
-        if ((son1 && son2) || ((root.val == p.val || root.val == q.val) && (son1 || son2))) {
+        if ((son1 && son2) || ((son1 || son2) && (root.val == p.val || root.val == q.val))) {
             ans = root;
         }
-        return son1 || son2 || (root.val == p.val || root.val == q.val);
+        return son1 || son2 || root.val == p.val || root.val == q.val;
     }
 
     public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
