@@ -46,4 +46,44 @@ public interface Graph {
      * @see com.leetcode.main.interval801.q815.Solution
      */
     void numBusesToDestination();
+
+    /**
+     * 找到小镇的法官
+     * * 统计每个节点的入度和出度
+     *
+     * @see com.leetcode.main.interval901.q997.Solution
+     */
+    void findJudge();
+
+    /**
+     * 省份数量
+     * * DFS / BFS
+     *
+     * @see com.leetcode.main.interval501.q547.Solution
+     */
+    void findCircleNum();
+
+    /**
+     * 移除最多的同行或同列石头
+     * * 将行列一致的点存储在一起
+     *
+     * @see com.leetcode.main.interval901.q947.Solution
+     */
+    void removeStones();
+
+    /**
+     * 可以到达所有点的最少点数目
+     * * 相当于统计入度为0的点
+     *
+     * @see com.leetcode.main.interval1501.q1557.Solution
+     */
+    void findSmallestSetOfVertices();
+
+    /**
+     * 钥匙和房间
+     * * DFS
+     *
+     * @see com.leetcode.main.interval801.q841.Solution
+     */
+    void canVisitAllRooms();
 }

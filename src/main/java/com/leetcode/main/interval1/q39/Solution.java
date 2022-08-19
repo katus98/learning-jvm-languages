@@ -38,4 +38,27 @@ public class Solution {
             }
         }
     }
+
+    /**
+     * 简化上面方法中不需要的部分, 例如排序和限制长度
+     */
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        this.resList.clear();
+        combine(candidates, target, 0, new ArrayList<>());
+        return resList;
+    }
+
+    private void combine(int[] candidates, int target, int index, List<Integer> list) {
+        if (target == 0) {
+            resList.add(new ArrayList<>(list));
+            return;
+        }
+        if (target > 0) {
+            for (int i = index; i < candidates.length; i++) {
+                list.add(candidates[i]);
+                combine(candidates, target - candidates[i], i, list);
+                list.remove(list.size() - 1);
+            }
+        }
+    }
 }
