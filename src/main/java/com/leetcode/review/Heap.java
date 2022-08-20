@@ -14,4 +14,12 @@ public interface Heap {
      * @see com.leetcode.main.interval201.q215.Solution
      */
     void findKthLargest();
+
+    /**
+     * 前 K 个高频元素
+     * * 哈希表统计数量 + K容量最小堆
+     *
+     * @see com.leetcode.main.interval301.q347.Solution
+     */
+    void topKFrequent();
 }
