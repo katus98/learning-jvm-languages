@@ -17,13 +17,12 @@ public class Solution {
 
     private int heightB(TreeNode node) {
         if (node == null) return 0;
-        int leftHeight = heightB(node.left);
-        int rightHeight = heightB(node.right);
-        if (leftHeight < 0 || rightHeight < 0 || Math.abs(leftHeight - rightHeight) > 1) {
+        int heightLeft = heightB(node.left);
+        int heightRight = heightB(node.right);
+        if (heightLeft == -1 || heightRight == -1 || Math.abs(heightLeft - heightRight) > 1) {
             return -1;
-        } else {
-            return Math.max(leftHeight, rightHeight) + 1;
         }
+        return Math.max(heightLeft, heightRight) + 1;
     }
 
     public static class TreeNode {
