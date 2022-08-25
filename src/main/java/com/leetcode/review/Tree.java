@@ -180,4 +180,12 @@ public interface Tree {
      * @see com.leetcode.offer.q37.Codec
      */
     void codec();
+
+    /**
+     * 二叉树中的列表
+     * * 遍历每个位置, 如果位置符合条件验证节点一一对应相等
+     *
+     * @see com.leetcode.main.interval1301.q1367.Solution
+     */
+    void isSubPath();
 }
