@@ -1,5 +1,8 @@
 package com.leetcode.main.interval701.q739;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 /**
  * 每日温度
  *
@@ -23,6 +26,27 @@ public class Solution {
             }
         }
         return after;
+    }
+
+    /**
+     * 单调栈 维护一个温度单调递减的单调栈
+     */
+    public int[] dailyTemperatures2(int[] temperatures) {
+        int length = temperatures.length;
+        int[] ans = new int[length];
+        Deque<Integer> stack = new LinkedList<>();
+        // 从左向右遍历
+        for (int i = 0; i < length; i++) {
+            int temperature = temperatures[i];
+            // 如果栈不为空, 将栈中小于当前温度的项目都弹出同时更新结果数组
+            while (!stack.isEmpty() && temperature > temperatures[stack.peek()]) {
+                int prevIndex = stack.pop();
+                ans[prevIndex] = i - prevIndex;
+            }
+            // 将当前温度入栈
+            stack.push(i);
+        }
+        return ans;
     }
 
     public static void main(String[] args) {
