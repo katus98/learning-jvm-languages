@@ -1,6 +1,8 @@
 package com.leetcode.main.interval501.q503;
 
 import java.util.Arrays;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * 下一个更大元素 II
@@ -124,5 +126,27 @@ public class Solution {
             }
         }
         return res;
+    }
+
+    /**
+     * 单调栈记录索引下标, 如果新加入的数值更大会更新单调栈中比当前数值小的结果
+     */
+    public int[] nextGreaterElements4(int[] nums) {
+        int[] res = new int[nums.length];
+        Arrays.fill(res, -1);
+        Deque<Integer> stack = new LinkedList<>();
+        for (int i = 0; i < 2 * nums.length - 1; i++) {
+            int index = i % nums.length;
+            while (!stack.isEmpty() && nums[index] > nums[stack.peek()]) {
+                res[stack.poll()] = nums[index];
+            }
+            stack.push(index);
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        System.out.println(Arrays.toString(solution.nextGreaterElements4(new int[]{1, 2, 1})));
     }
 }
