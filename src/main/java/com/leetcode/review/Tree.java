@@ -189,4 +189,12 @@ public interface Tree {
      * @see com.leetcode.main.interval1301.q1367.Solution
      */
     void isSubPath();
+
+    /**
+     * 通知所有员工所需的时间
+     * * 原生DFS + 记忆化搜索 从所有的节点向根节点遍历
+     *
+     * @see com.leetcode.main.interval1301.q1376.Solution
+     */
+    void numOfMinutes();
 }
