@@ -32,4 +32,12 @@ public interface BitOperation {
      * @see com.leetcode.main.interval101.q136.Solution
      */
     void singleNumber();
+
+    /**
+     * 比特位计数
+     * * DP: dp[i] = dp[i - highBit] + 1;
+     *
+     * @see com.leetcode.main.interval301.q338.Solution
+     */
+    void countBits();
 }
