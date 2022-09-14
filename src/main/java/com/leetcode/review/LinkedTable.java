@@ -89,6 +89,14 @@ public interface LinkedTable {
     void addTwoNumbers();
 
     /**
+     * 两数相加 II
+     * * 通过栈反转数字, 然后倒叙安置链表
+     *
+     * @see com.leetcode.main.interval401.q445.Solution
+     */
+    void addTwoNumbers2();
+
+    /**
      * 相交链表
      * * 统计链表长度, 向后对齐, 然后同时遍历节点
      *
@@ -118,4 +126,20 @@ public interface LinkedTable {
      * @see com.leetcode.main.interval101.q143.Solution
      */
     void reorderList();
+
+    /**
+     * 复制带随机指针的链表
+     * * 通过一个map记录旧节点向新节点的映射关系
+     *
+     * @see com.leetcode.main.interval101.q138.Solution
+     */
+    void copyRandomList();
+
+    /**
+     * 旋转链表
+     * * 统计链表长度进而计算需要把左侧几个节点放到尾部, 记录首尾指针
+     *
+     * @see com.leetcode.main.interval1.q61.Solution
+     */
+    void rotateRight();
 }

@@ -449,4 +449,16 @@ public interface DynamicProgramming {
      * @see com.leetcode.main.interval1.q5.Solution
      */
     void longestPalindrome();
+
+    /**
+     * 最长有效括号
+     * * DP 表示以包含当前位置结尾的字符串最长有效括号长度
+     * * d1DP: s[i]='(' : dp[i] = 0
+     * * d1DP: s[i]=')' && s[i−1] == '(' : dp[i] = dp[i−2] + 2
+     * * d1DP: s[i]=')' && s[i−1] == ')' && s[i−dp[i−1]−1] == '(' : dp[i] = dp[i−1]+dp[i−dp[i−1]−2]+2
+     * * d1DP: else : dp[i] = 0
+     *
+     * @see com.leetcode.main.interval1.q32.Solution
+     */
+    void longestValidParentheses();
 }
