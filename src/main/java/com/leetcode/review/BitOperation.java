@@ -40,4 +40,12 @@ public interface BitOperation {
      * @see com.leetcode.main.interval301.q338.Solution
      */
     void countBits();
+
+    /**
+     * 汉明距离
+     * * 按位亦或
+     *
+     * @see com.leetcode.main.interval401.q461.Solution
+     */
+    void hammingDistance();
 }
