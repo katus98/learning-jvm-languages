@@ -142,4 +142,10 @@ public interface LinkedTable {
      * @see com.leetcode.main.interval1.q61.Solution
      */
     void rotateRight();
+
+    /**
+     * 删除链表中的节点
+     * * 将后续节点值向前移动并删除最后一个节点
+     */
+    void deleteNode();
 }
