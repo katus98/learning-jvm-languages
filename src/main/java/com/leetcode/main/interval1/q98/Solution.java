@@ -31,6 +31,29 @@ public class Solution {
         }
     }
 
+    private long lastValue;
+    private boolean res;
+
+    public boolean isValidBST2(TreeNode root) {
+        this.lastValue = Long.MIN_VALUE;
+        this.res = true;
+        inorder2(root);
+        return res;
+    }
+
+    private void inorder2(TreeNode root) {
+        if (!res) return;
+        if (root != null) {
+            inorder2(root.left);
+            if (root.val <= lastValue) {
+                res = false;
+                return;
+            }
+            this.lastValue = root.val;
+            inorder2(root.right);
+        }
+    }
+
     public static class TreeNode {
         int val;
         TreeNode left;
