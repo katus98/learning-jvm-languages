@@ -40,6 +40,35 @@ public class Solution {
         }
     }
 
+    private void dfs2(StringBuilder builder, int idx, int count, String s) {
+        if (idx >= s.length()) return;
+        if (count == 1) {
+            String str = s.substring(idx);
+            if (isValid(str)) {
+                builder.append(str);
+                list.add(builder.toString());
+                builder.delete(builder.length() - str.length(), builder.length());
+            }
+            return;
+        }
+        for (int len = 1; len <= 3; len++) {
+            if (idx + len > s.length()) return;
+            String str = s.substring(idx, idx + len);
+            if (isValid(str)) {
+                builder.append(str).append(".");
+                dfs2(builder, idx + len, count - 1, s);
+                builder.delete(builder.length() - str.length() - 1, builder.length());
+            }
+        }
+    }
+
+    private boolean isValid(String s) {
+        if (s.isEmpty() || s.length() > 3) return false;
+        if (s.length() == 1) return true;
+        if (s.charAt(0) == '0') return false;
+        return Integer.parseInt(s) <= 255;
+    }
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         solution.restoreIpAddresses("25525511135").forEach(System.out::println);
