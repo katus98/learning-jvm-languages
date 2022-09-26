@@ -48,4 +48,10 @@ public interface BitOperation {
      * @see com.leetcode.main.interval401.q461.Solution
      */
     void hammingDistance();
+
+    /**
+     * 格雷编码
+     * * 对称生成, 在原有序列的基础上镜像向右翻转一倍, 然后将翻转出来的最高位变成1
+     */
+    void grayCode();
 }
