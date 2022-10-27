@@ -1,4 +1,4 @@
-package com.leetcode.exam.autumn.formal.ant;
+package com.leetcode.exam.autumn.formal.ant.data;
 
 import java.util.Scanner;
 
